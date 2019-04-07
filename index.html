@@ -454,7 +454,7 @@
                 
               
 
-              <time title="创建时间：2019-04-07 15:50:03 / 修改时间：16:02:08" itemprop="dateCreated datePublished" datetime="2019-04-07T15:50:03+08:00">2019-04-07</time>
+              <time title="创建时间：2019-04-07 15:50:03 / 修改时间：16:11:15" itemprop="dateCreated datePublished" datetime="2019-04-07T15:50:03+08:00">2019-04-07</time>
             
 
             
@@ -571,13 +571,13 @@
 <p>检查版本确保安装</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git --version</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> nginx -V</span><br></pre></td></tr></table></figure>
 <h2 id="2-3-配置nginx"><a href="#2-3-配置nginx" class="headerlink" title="2.3 配置nginx"></a>2.3 配置nginx</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>切换目录</span><br><span class="line"><span class="meta">$</span> cd /etc/nginx/sites-available</span><br><span class="line"><span class="meta">#</span>备份默认配置</span><br><span class="line"><span class="meta">$</span> cp default default.bak </span><br><span class="line"><span class="meta">#</span>修改配置</span><br><span class="line"><span class="meta">$</span> vim default</span><br></pre></td></tr></table></figure>
-<p><img src="../../../%E6%88%91%E7%9A%84%E5%9D%9A%E6%9E%9C%E4%BA%91/lecture/%E7%AC%94%E8%AE%B0/Hexo/img/1554297275022.png" alt="1554297275022"></p>
+<p><img src="img/1554297275022.png" alt="1554297275022"></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>检查是否有错误</span><br><span class="line"><span class="meta">$</span> nginx -t </span><br><span class="line"><span class="meta">#</span>保存退出后，启动</span><br><span class="line"><span class="meta">$</span> nginx：systemctl start nginx</span><br><span class="line"><span class="meta">#</span>设置开机自动启动</span><br><span class="line"><span class="meta">$</span> systemctl enable nginx</span><br><span class="line"><span class="meta">#</span>查看运行状态</span><br><span class="line"><span class="meta">$</span> systemctl status nginx</span><br><span class="line"><span class="meta">#</span>显示running表示成功运行</span><br></pre></td></tr></table></figure>
 <h2 id="2-4-创建git用户"><a href="#2-4-创建git用户" class="headerlink" title="2.4 创建git用户"></a>2.4 创建git用户</h2><h3 id="2-4-1-创建"><a href="#2-4-1-创建" class="headerlink" title="2.4.1 创建"></a>2.4.1 创建</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> adduser git</span><br></pre></td></tr></table></figure>
 <h3 id="2-4-2-赋予sudo权限"><a href="#2-4-2-赋予sudo权限" class="headerlink" title="2.4.2 赋予sudo权限"></a>2.4.2 赋予sudo权限</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> chmod 740 /etc/sudoers</span><br><span class="line"><span class="meta">$</span> vim /etc/sudoers</span><br></pre></td></tr></table></figure>
 <p>然后修改在root下面添加</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git ALL=(ALL) ALL</span><br></pre></td></tr></table></figure>
-<p><img src="../../../%E6%88%91%E7%9A%84%E5%9D%9A%E6%9E%9C%E4%BA%91/lecture/%E7%AC%94%E8%AE%B0/Hexo/img/1554293490911.png" alt="1554293490911"></p>
+<p><img src="img/1554293490911.png" alt="1554293490911"></p>
 <p>改回权限</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> chmod 400 /etc/sudoers</span><br></pre></td></tr></table></figure>
 <h2 id="2-5-配置SSH"><a href="#2-5-配置SSH" class="headerlink" title="2.5 配置SSH"></a>2.5 配置SSH</h2><h3 id="2-5-1-切换git用户，并到git用户目录"><a href="#2-5-1-切换git用户，并到git用户目录" class="headerlink" title="2.5.1 切换git用户，并到git用户目录"></a>2.5.1 切换git用户，并到git用户目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>切换到git用户</span><br><span class="line"><span class="meta">$</span> su git</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>转到git用户目录</span><br><span class="line"><span class="meta">$</span> cd /home/git</span><br></pre></td></tr></table></figure>
@@ -600,7 +600,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 回到git目录</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> /home/git</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用git用户创建git裸仓库，以blog.git为例</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git init --bare blog.git</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>根据前面配置的nginx中的根目录</p>
-<p><img src="../../../%E6%88%91%E7%9A%84%E5%9D%9A%E6%9E%9C%E4%BA%91/lecture/%E7%AC%94%E8%AE%B0/Hexo/img/1554301495222.png" alt="1554301495222"></p>
+<p><img src="img/1554301495222.png" alt="1554301495222"></p>
 </li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">切换目录</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> /var/www/   </span></span><br><span class="line"><span class="meta">#</span><span class="bash">创建网站目录，以blog为例</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> mkdir blog</span></span><br></pre></td></tr></table></figure>
@@ -776,6 +776,10 @@
                 <div class="site-state-item site-state-categories">
                   
                     
+                      <a href="/categories/">
+                    
+                  
+                    
                     
                       
                     
@@ -783,7 +787,7 @@
                     
                     <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">分类</span>
-                  
+                  </a>
                 </div>
               
 
