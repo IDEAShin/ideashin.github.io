@@ -96,16 +96,22 @@
 
 
 
-  <meta name="description" content="Always believe that something wonderful is about to happen.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="IDEAShin">
-<meta property="og:url" content="http://www.ideashin.com/index.html">
+  <meta name="description" content="0. 前言看到别人都在写blog，拥有自己的小站，实在羡慕不已。虽然自己也在做笔记，但是总感觉自己偷偷放着不那么舒服，不如放在网上和大家一起交流共勉。因此我决心要有自己的blog。最后终于完成了自己第一个的网站，也是自己第一个blog，也是有了自己的第一个域名ideashin.com。 建站的过程并不怎么顺利，本来Hexo+GitHub是绝配，但是我本身就有一个限制（开小飞机）的vps，一直放着也">
+<meta name="keywords" content="Hexo,Vps,建站">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo搭建个人博客并部署到Vps服务器">
+<meta property="og:url" content="http://www.ideashin.com/2019/04/07/Hexo搭建个人博客并部署到Vps服务器/index.html">
 <meta property="og:site_name" content="IDEAShin">
-<meta property="og:description" content="Always believe that something wonderful is about to happen.">
+<meta property="og:description" content="0. 前言看到别人都在写blog，拥有自己的小站，实在羡慕不已。虽然自己也在做笔记，但是总感觉自己偷偷放着不那么舒服，不如放在网上和大家一起交流共勉。因此我决心要有自己的blog。最后终于完成了自己第一个的网站，也是自己第一个blog，也是有了自己的第一个域名ideashin.com。 建站的过程并不怎么顺利，本来Hexo+GitHub是绝配，但是我本身就有一个限制（开小飞机）的vps，一直放着也">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.ideashin.com/2019/%E6%88%91%E7%9A%84%E5%9D%9A%E6%9E%9C%E4%BA%91/lecture/%E7%AC%94%E8%AE%B0/Hexo/img/1554297275022.png">
+<meta property="og:image" content="http://www.ideashin.com/2019/%E6%88%91%E7%9A%84%E5%9D%9A%E6%9E%9C%E4%BA%91/lecture/%E7%AC%94%E8%AE%B0/Hexo/img/1554293490911.png">
+<meta property="og:image" content="http://www.ideashin.com/2019/%E6%88%91%E7%9A%84%E5%9D%9A%E6%9E%9C%E4%BA%91/lecture/%E7%AC%94%E8%AE%B0/Hexo/img/1554301495222.png">
+<meta property="og:updated_time" content="2019-04-07T08:02:08.514Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IDEAShin">
-<meta name="twitter:description" content="Always believe that something wonderful is about to happen.">
+<meta name="twitter:title" content="Hexo搭建个人博客并部署到Vps服务器">
+<meta name="twitter:description" content="0. 前言看到别人都在写blog，拥有自己的小站，实在羡慕不已。虽然自己也在做笔记，但是总感觉自己偷偷放着不那么舒服，不如放在网上和大家一起交流共勉。因此我决心要有自己的blog。最后终于完成了自己第一个的网站，也是自己第一个blog，也是有了自己的第一个域名ideashin.com。 建站的过程并不怎么顺利，本来Hexo+GitHub是绝配，但是我本身就有一个限制（开小飞机）的vps，一直放着也">
+<meta name="twitter:image" content="http://www.ideashin.com/2019/%E6%88%91%E7%9A%84%E5%9D%9A%E6%9E%9C%E4%BA%91/lecture/%E7%AC%94%E8%AE%B0/Hexo/img/1554297275022.png">
 
 
 
@@ -113,7 +119,7 @@
 
   
   
-  <link rel="canonical" href="http://www.ideashin.com/">
+  <link rel="canonical" href="http://www.ideashin.com/2019/04/07/Hexo搭建个人博客并部署到Vps服务器/">
 
 
 
@@ -123,7 +129,7 @@
   };
 </script>
 
-  <title>IDEAShin</title>
+  <title>Hexo搭建个人博客并部署到Vps服务器 | IDEAShin</title>
   
 
 
@@ -171,8 +177,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,7 +219,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -392,9 +397,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -426,10 +431,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/07/Hexo搭建个人博客并部署到Vps服务器/" class="post-title-link" itemprop="url">Hexo搭建个人博客并部署到Vps服务器</a>
+          <h1 class="post-title" itemprop="name headline">Hexo搭建个人博客并部署到Vps服务器
+
               
             
           </h1>
@@ -513,6 +516,13 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
           
 
@@ -531,9 +541,7 @@
       
 
       
-        
-          
-            <h1 id="0-前言"><a href="#0-前言" class="headerlink" title="0. 前言"></a>0. 前言</h1><p>看到别人都在写blog，拥有自己的小站，实在羡慕不已。虽然自己也在做笔记，但是总感觉自己偷偷放着不那么舒服，不如放在网上和大家一起交流共勉。因此我决心要有自己的blog。最后终于完成了自己第一个的网站，也是自己第一个blog，也是有了自己的第一个域名ideashin.com。</p>
+        <h1 id="0-前言"><a href="#0-前言" class="headerlink" title="0. 前言"></a>0. 前言</h1><p>看到别人都在写blog，拥有自己的小站，实在羡慕不已。虽然自己也在做笔记，但是总感觉自己偷偷放着不那么舒服，不如放在网上和大家一起交流共勉。因此我决心要有自己的blog。最后终于完成了自己第一个的网站，也是自己第一个blog，也是有了自己的第一个域名ideashin.com。</p>
 <p>建站的过程并不怎么顺利，本来Hexo+GitHub是绝配，但是我本身就有一个限制（开小飞机）的vps，一直放着也是浪费，因此决心用vps部署一个Hexo的博客。因为以前并没有接触过，所以查看了很多资料才完成的。以下就是我建站的过程，遇到的问题我都放在最后面了，如果有幸能被看到的话希望能有所帮助。</p>
 <p>在此写下第一篇博客，也是自己的一个开端，希望对自己有能所提升。也方便自己以后查阅，也希望能有幸帮到他人。</p>
 <h1 id="1-本地安装"><a href="#1-本地安装" class="headerlink" title="1. 本地安装"></a>1. 本地安装</h1><h2 id="1-1-环境配置"><a href="#1-1-环境配置" class="headerlink" title="1.1 环境配置"></a>1.1 环境配置</h2><p>安装hexo需要在本机安装Git以及Node.js</p>
@@ -680,8 +688,6 @@
 </li>
 </ul>
 
-          
-        
       
     </div>
 
@@ -699,17 +705,51 @@
     
 
     
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Shin</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="http://www.ideashin.com/2019/04/07/Hexo搭建个人博客并部署到Vps服务器/" title="Hexo搭建个人博客并部署到Vps服务器">http://www.ideashin.com/2019/04/07/Hexo搭建个人博客并部署到Vps服务器/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+            <a href="/tags/Vps/" rel="tag"># Vps</a>
+          
+            <a href="/tags/建站/" rel="tag"># 建站</a>
+          
+        </div>
+      
+
+      
+      
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -719,14 +759,22 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -746,8 +794,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -867,6 +924,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0-前言"><span class="nav-number">1.</span> <span class="nav-text">0. 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-本地安装"><span class="nav-number">2.</span> <span class="nav-text">1. 本地安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-环境配置"><span class="nav-number">2.1.</span> <span class="nav-text">1.1 环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1-Git"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.1.1 Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-2-Node-js"><span class="nav-number">2.1.2.</span> <span class="nav-text">1.1.2 Node.js</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Hexo配置"><span class="nav-number">2.2.</span> <span class="nav-text">1.2 Hexo配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-安装"><span class="nav-number">2.2.1.</span> <span class="nav-text">1.2.1 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-建站"><span class="nav-number">2.2.2.</span> <span class="nav-text">1.2.2 建站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-3-测试"><span class="nav-number">2.2.3.</span> <span class="nav-text">1.2.3 测试</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Server操作"><span class="nav-number">3.</span> <span class="nav-text">2. Server操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-确保您的系统和apt包"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 确保您的系统和apt包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-安装git、sudo、nginx"><span class="nav-number">3.2.</span> <span class="nav-text">2.2 安装git、sudo、nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-配置nginx"><span class="nav-number">3.3.</span> <span class="nav-text">2.3 配置nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-创建git用户"><span class="nav-number">3.4.</span> <span class="nav-text">2.4 创建git用户</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-1-创建"><span class="nav-number">3.4.1.</span> <span class="nav-text">2.4.1 创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-2-赋予sudo权限"><span class="nav-number">3.4.2.</span> <span class="nav-text">2.4.2 赋予sudo权限</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-配置SSH"><span class="nav-number">3.5.</span> <span class="nav-text">2.5 配置SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-1-切换git用户，并到git用户目录"><span class="nav-number">3.5.1.</span> <span class="nav-text">2.5.1 切换git用户，并到git用户目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-2-配置ssh"><span class="nav-number">3.5.2.</span> <span class="nav-text">2.5.2 配置ssh</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-创建git裸库"><span class="nav-number">3.6.</span> <span class="nav-text">2.6 创建git裸库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-检查用户权限"><span class="nav-number">3.7.</span> <span class="nav-text">2.7 检查用户权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-8-使用git-hooks同步网站根目录"><span class="nav-number">3.8.</span> <span class="nav-text">2.8 使用git-hooks同步网站根目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-9-关闭git用户的shell权限"><span class="nav-number">3.9.</span> <span class="nav-text">2.9 关闭git用户的shell权限</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-本地操作"><span class="nav-number">4.</span> <span class="nav-text">3. 本地操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-配置本地Hexo的-config-yml"><span class="nav-number">4.1.</span> <span class="nav-text">3.1 配置本地Hexo的_config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-同步到服务器"><span class="nav-number">4.2.</span> <span class="nav-text">3.2 同步到服务器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-问题总结"><span class="nav-number">5.</span> <span class="nav-text">4. 问题总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器使用sodu命令时无法使用"><span class="nav-number">5.1.</span> <span class="nav-text">服务器使用sodu命令时无法使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#systemctl-command-not-found"><span class="nav-number">5.2.</span> <span class="nav-text">systemctl: command not found</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fatal-Not-a-git-repository-or-any-of-the-parent-directories-git"><span class="nav-number">5.3.</span> <span class="nav-text">fatal: Not a git repository (or any of the parent directories): .git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED"><span class="nav-number">5.4.</span> <span class="nav-text">WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#repository-‘xxxxxxxxx’does-not-exist"><span class="nav-number">5.5.</span> <span class="nav-text">repository ‘xxxxxxxxx’does not exist</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在clone一些git项目的时候，有些可能时间太久远，下载失败"><span class="nav-number">5.6.</span> <span class="nav-text">在clone一些git项目的时候，有些可能时间太久远，下载失败</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -1026,6 +1100,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
 
   
 
@@ -1044,9 +1122,28 @@
   <script id="dsq-count-scr" src="https://ideashin.disqus.com/count.js" async></script>
 
 
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://www.ideashin.com/2019/04/07/Hexo搭建个人博客并部署到Vps服务器/";
+    this.page.identifier = "2019/04/07/Hexo搭建个人博客并部署到Vps服务器/";
+    this.page.title = 'Hexo搭建个人博客并部署到Vps服务器';
+    };
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://ideashin.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  
+    loadComments();
+  
+</script>
 
 
 
+
+
+  
 
 
   
