@@ -454,7 +454,7 @@
                 
               
 
-              <time title="创建时间：2019-04-10 21:01:59 / 修改时间：21:05:03" itemprop="dateCreated datePublished" datetime="2019-04-10T21:01:59+08:00">2019-04-10</time>
+              <time title="创建时间：2019-04-10 21:01:59 / 修改时间：21:06:51" itemprop="dateCreated datePublished" datetime="2019-04-10T21:01:59+08:00">2019-04-10</time>
             
 
             
@@ -532,8 +532,7 @@
 
       
         
-          
-            <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ul>
+          <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ul>
 <li>Git是一个<strong>分散式版本控制</strong>软件。</li>
 <li>它会把你每次修改提交的内容都记录下来， 如果某一次修改出错，想回到修改之前，可以直接通过git跳到上一次提交的文件内容。</li>
 </ul>
@@ -546,44 +545,16 @@
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.name <span class="string">"shin"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.email <span class="string">"shin@gamin.com"</span></span></span><br></pre></td></tr></table></figure>
 <h1 id="仓库创建及工作流"><a href="#仓库创建及工作流" class="headerlink" title="仓库创建及工作流"></a>仓库创建及工作流</h1><h2 id="仓库创建"><a href="#仓库创建" class="headerlink" title="仓库创建"></a>仓库创建</h2><ul>
-<li><p>初始化版本库</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git init</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加文件到版本库</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git add [文件名]</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit [-m <span class="string">"输入每次修改提交的信息"</span>]</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>查看仓库状态</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line"><span class="meta">#</span><span class="bash">提示clean就是全部提交，是干净的</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>扩展</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">pwd</span> <span class="comment">#当前目录</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ll <span class="comment">#目录下的文件</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> <span class="string">"git哈哈"</span> &gt;&gt; text.txt <span class="comment">#创建text.txt，并且把当前输出的“git哈哈”输出到text.txt</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat text.txt <span class="comment">#展现当前文件内容</span></span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="工作流"><a href="#工作流" class="headerlink" title="工作流"></a>工作流</h2><p><img src="/2019/04/10/Git基础命令操作入门/1554710140787.png" alt="1554710140787"></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git reset HEAD text.txt <span class="comment">#暂存区重写，就是将仓库得到最后一个版本替换暂存区</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git checkout text.txt <span class="comment">#工作区变干净，清除未提交的数据</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git checkout HEAD &lt;file&gt; <span class="comment">#仓库的文件替换暂存区和工作区</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">回滚</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> <span class="comment">#拿到需要回滚到的commit码</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard commit码 <span class="comment">#仓库和暂存区都回滚</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> git rm --cached <span class="comment">#清空暂存区</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git rm text.txt <span class="comment">#清除本地文件，在次add commit才能将仓库清空</span></span></span><br></pre></td></tr></table></figure>
-<h1 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h1><h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><ul>
-<li><p>创建SSH key</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">创建公钥</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ssh-keygen -t rsa -C <span class="string">"邮箱地址"</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">然后获取复制公钥</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat ~/.ssh/id_rsa.pub</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>进入Github，点击头像——setting——SSH and GPG keys，点击new ssh key</p>
-</li>
-<li><p>在本地git中输入测试</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ssh -T git@github.com</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo "# shin_test" &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m "first commit"</span><br><span class="line">git remote add origin https://github.com/ideashin/shin_test.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创新一个新仓库</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo "# shin_test" &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m "first commit"</span><br><span class="line">git remote add origin https://github.com/ideashin/shin_test.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="克隆仓库"><a href="#克隆仓库" class="headerlink" title="克隆仓库"></a>克隆仓库</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:xxx/xx.git</span><br></pre></td></tr></table></figure>
-<h2 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h2><p>通过标签回滚版本</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git tag         #查看所有标签</span><br><span class="line"></span><br><span class="line">git tag name     #创建标签</span><br><span class="line"></span><br><span class="line">git tag -a name -m "content"        #指定提交信息</span><br><span class="line"></span><br><span class="line">git tag -d name         #删除标签</span><br><span class="line"></span><br><span class="line">git push origin name      #标签发布</span><br></pre></td></tr></table></figure>
-<h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><p><img src="/2019/04/10/Git基础命令操作入门/1554779587657.png" alt="1554779587657"></p>
-<p>如图，分支的用途就是，当你在brand时要和别人合作开发项目，但是又需要一定的时间，为了不影响主分支master，令新建一个feature分支，开发完成后，在到merge合并分支</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">创建分支：</span></span><br><span class="line">git branch +分支名</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">查看所有分支：</span></span><br><span class="line">git branch  #*号代表当前所在分支</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">切换分支：</span></span><br><span class="line">git checkout 分支名     #切换到指定分支</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">合并到master分支：</span></span><br><span class="line">git merge 分支名     #首先切换到master分支，然后merge合并。</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">删除分支：</span></span><br><span class="line">git branch -d 分支名</span><br></pre></td></tr></table></figure>
-
+<li><p>初始化版本库</p></li></ul>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/04/10/Git基础命令操作入门/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -683,7 +654,7 @@
                 
               
 
-              <time title="创建时间：2019-04-10 19:16:49 / 修改时间：20:39:23" itemprop="dateCreated datePublished" datetime="2019-04-10T19:16:49+08:00">2019-04-10</time>
+              <time title="创建时间：2019-04-10 19:16:49 / 修改时间：21:06:12" itemprop="dateCreated datePublished" datetime="2019-04-10T19:16:49+08:00">2019-04-10</time>
             
 
             
@@ -764,12 +735,7 @@
           <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    建立这个博客也已经三天了，写完第一个建站过程之后，一直不知道该如何下手去写。从知乎上查找“博客 怎么写”、去看别人的博客，刚开始到底怎么写呢？其实到现在我也不是特别明白。</p>
 <p>​    既然不明白，那就有什么写什么吧！自己正在学习java，建这个博客本意也是为了能提升自己做好笔记。下定决心就开始写了，先把今天学习的Spring基础写出来，以后在慢慢回顾Java以前的知识点。以下的文章，我是跟着慕课网的课程，以及看书查阅，总结而成的。</p>
 <h1 id="Spring是什么"><a href="#Spring是什么" class="headerlink" title="Spring是什么"></a>Spring是什么</h1><blockquote>
-<p><strong>Spring Framework</strong> 是一个开源的<a href="https://zh.wikipedia.org/wiki/Java" target="_blank" rel="noopener">Java</a>／<a href="https://zh.wikipedia.org/wiki/Java_EE" target="_blank" rel="noopener">Java EE</a>全功能栈（full-stack）的<a href="https://zh.wikipedia.org/wiki/%E8%BD%AF%E4%BB%B6%E6%A1%86%E6%9E%B6" target="_blank" rel="noopener">应用程序框架</a>，以<a href="https://zh.wikipedia.org/wiki/Apache_License_2.0" target="_blank" rel="noopener">Apache License 2.0</a>开源许可协议的形式发布，也有<a href="https://zh.wikipedia.org/wiki/.NET" target="_blank" rel="noopener">.NET</a>平台上的移植版本。该框架基于 <a href="http://www.wrox.com/WileyCDA/WroxTitle/productCd-0764543857.html" target="_blank" rel="noopener">Expert One-on-One Java EE Design and Development</a>（<a href="https://zh.wikipedia.org/wiki/Special:%E7%BD%91%E7%BB%9C%E4%B9%A6%E6%BA%90/0764543857" target="_blank" rel="noopener">ISBN 0-7645-4385-7</a>）一书中的代码，最初由Rod Johnson和Juergen Hoeller等开发。Spring Framework提供了一个简易的开发方式，这种开发方式，将避免那些可能致使底层代码变得繁杂混乱的大量的属性文件和帮助类。</p>
-<p>——wiki</p>
-</blockquote>
-<p>简单来说</p>
-<ul>
-<li>Spring是一个开源的Java/JavaEE全功能框架。也就是说可能贯穿整个开发过程，有全套的解决方案。</li></ul>
+<p><strong>Spring Framework</strong> 是一个开源的<a href="https://zh.wikipedia.org/wiki/Java" target="_blank" rel="noopener">Java</a>／<a href="https://zh.wikipedia.org/wiki/Java_EE" target="_blank" rel="noopener">Java EE</a>全功能栈（full-stack）的<a href="https://zh.wikipedia.org/wiki/%E8%BD%AF%E4%BB%B6%E6%A1%86%E6%9E%B6" target="_blank" rel="noopener">应用程序框架</a>，以<a href="https://zh.wikipedia.org/wiki/Apache_License_2.0" target="_blank" rel="noopener">Apache License 2.0</a>开源许可协议的形式发布，</p></blockquote>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -895,7 +861,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-10 20:39:36" itemprop="dateModified" datetime="2019-04-10T20:39:36+08:00">2019-04-10</time>
+                <time title="修改时间：2019-04-10 21:06:59" itemprop="dateModified" datetime="2019-04-10T21:06:59+08:00">2019-04-10</time>
               
             
           </span>
@@ -969,9 +935,6 @@
       
         
           <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    看到别人都在写blog，拥有自己的小站，实在羡慕不已。虽然自己也在做笔记，但是总感觉自己偷偷放着不那么舒服，不如放在网上和大家一起交流共勉。因此我决心要有自己的blog。最后终于完成了自己第一个的网站，也是自己第一个blog，也是有了自己的第一个域名ideashin.com。</p>
-<p>​    建站的过程并不怎么顺利，本来Hexo+GitHub是绝配，但是我本身就有一个限制（开小飞机）的vps，一直放着也是浪费，因此决心用vps部署一个Hexo的博客。因为以前并没有接触过，所以查看了很多资料才完成的。以下就是我建站的过程，遇到的问题我都放在最后面了，如果有幸能被看到的话希望能有所帮助。</p>
-<p>​    在此写下第一篇博客，也是自己的一个开端，希望对自己有能所提升。也方便自己以后查阅，也希望能有幸帮到他人。</p>
-<h1 id="本地安装"><a href="#本地安装" class="headerlink" title="本地安装"></a>本地安装</h1><h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>安装hexo需要在本机安装Git以及Node.js</p>
           <!--noindex-->
           
             <div class="post-button text-center">
