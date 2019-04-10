@@ -3,19 +3,6 @@
   <entry>
     <title><![CDATA[Spring-基础入门]]></title>
     <url>%2F2019%2F04%2F10%2FSpring-%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%2F</url>
-    <content type="text"><![CDATA[前言​ 建立这个博客也已经三天了，写完第一个建站过程之后，一直不知道该如何下手去写。从知乎上查找“博客 怎么写”、去看别人的博客，刚开始到底怎么写呢？其实到现在我也不是特别明白。 ​ 既然不明白，那就有什么写什么吧！自己正在学习java，建这个博客本意也是为了能提升自己做好笔记。下定决心就开始写了，先把今天学习的Spring基础写出来，以后在慢慢回顾Java以前的知识点。以下的文章，我是跟着慕课网的课程，以及看书查阅，总结而成的。 Spring是什么 Spring Framework 是一个开源的Java／Java EE全功能栈（full-stack）的应用程序框架，以Apache License 2.0开源许可协议的形式发布，也有.NET平台上的移植版本。该框架基于 Expert One-on-One Java EE Design and Development（ISBN 0-7645-4385-7）一书中的代码，最初由Rod Johnson和Juergen Hoeller等开发。Spring Framework提供了一个简易的开发方式，这种开发方式，将避免那些可能致使底层代码变得繁杂混乱的大量的属性文件和帮助类。 ——wiki 简单来说 Spring是一个开源的Java/JavaEE全功能框架。也就是说可能贯穿整个开发过程，有全套的解决方案。 它是为了简写代码而生的，可以有效的使复杂的代码变得简单，方便了程序开发。 Spring有什么优点 方便解耦，简单开发 Spring就是一个大工厂，可以将所有对象创建和依赖关系的维护交给Spring管理，这样极大降低了耦合性，是开发过程变得简单。 AOP编程的支持 AOP就是面向切面编程，可以在不修改源代码的情况下仅程序动态统一的添加功能，可以对业务逻辑的各部分进行分离，从而提高的程序的复用性，降低了耦合 声明式事务的支持 只需要通过配置就可以完成对事务的管理，而无需手动编程 方便程序的测试 Spring对Junit4支持，可以通过注解方面的测试Spring程序 方便继承各种优秀框架 Spring不排斥各种优秀的开源框架，其内部提供了对各种优秀框架的直接支持 降低JavaEE API的使用难度 Spring对JavaEE开发中非常难用的一些API，都提供了封装，使这些API的使用难度大大降低 高度开放性 不强制使用框架，可以根据需求使用框架的部分或全部 Spring模块 Core Container Spring的核心容器，是Spring框架的基础，作用是责管理对象的创建，管理，配置等等的操作。 AOP和Aspects 面向切面编程的能力 Web 支持web开发， 包含了4个web组件 Date 持久层，数据访问的集成]]></content>
-      <categories>
-        <category>Java</category>
-        <category>Spring</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>Spring</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Spring-基础入门]]></title>
-    <url>%2F2019%2F04%2F10%2FSpring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%2F</url>
     <content type="text"><![CDATA[前言​ 建立这个博客也已经三天了，写完第一个建站过程之后，一直不知道该如何下手去写。从知乎上查找“博客 怎么写”、去看别人的博客，刚开始到底怎么写呢？其实到现在我也不是特别明白。 ​ 既然不明白，那就有什么写什么吧！自己正在学习java，建这个博客本意也是为了能提升自己做好笔记。下定决心就开始写了，先把今天学习的Spring基础写出来，以后在慢慢回顾Java以前的知识点。以下的文章，我是跟着慕课网的课程，以及看书查阅，总结而成的。 Spring是什么 Spring Framework 是一个开源的Java／Java EE全功能栈（full-stack）的应用程序框架，以Apache License 2.0开源许可协议的形式发布，也有.NET平台上的移植版本。该框架基于 Expert One-on-One Java EE Design and Development（ISBN 0-7645-4385-7）一书中的代码，最初由Rod Johnson和Juergen Hoeller等开发。Spring Framework提供了一个简易的开发方式，这种开发方式，将避免那些可能致使底层代码变得繁杂混乱的大量的属性文件和帮助类。 ——wiki 简单来说 Spring是一个开源的Java/JavaEE全功能框架。也就是说可能贯穿整个开发过程，有全套的解决方案。 它是为了简写代码而生的，可以有效的使复杂的代码变得简单，方便了程序开发。 Spring有什么优点 方便解耦，简单开发 Spring就是一个大工厂，可以将所有对象创建和依赖关系的维护交给Spring管理，这样极大降低了耦合性，是开发过程变得简单。 AOP编程的支持 AOP就是面向切面编程，可以在不修改源代码的情况下仅程序动态统一的添加功能，可以对业务逻辑的各部分进行分离，从而提高的程序的复用性，降低了耦合 声明式事务的支持 只需要通过配置就可以完成对事务的管理，而无需手动编程 方便程序的测试 Spring对Junit4支持，可以通过注解方面的测试Spring程序 方便继承各种优秀框架 Spring不排斥各种优秀的开源框架，其内部提供了对各种优秀框架的直接支持 降低JavaEE API的使用难度 Spring对JavaEE开发中非常难用的一些API，都提供了封装，使这些API的使用难度大大降低 高度开放性 不强制使用框架，可以根据需求使用框架的部分或全部 Spring模块 Core Container Spring的核心容器，是Spring框架的基础，作用是责管理对象的创建，管理，配置等等的操作。 AOP和Aspects 面向切面编程的能力，上面优点里已经说明，在做里不做介绍 Instrumentation/Messaging 提供了为JVM添加代理的功能。几乎不用。 Web 支持web开发， 包含了4个web组件 Date Access/Integrating 持久层，简化了数据访问的操作，同时提供了ORM框架的能力，可以对流行的ORM框架进行整合]]></content>
       <categories>
         <category>Java</category>
