@@ -454,7 +454,7 @@
                 
               
 
-              <time title="创建时间：2019-04-10 19:16:49 / 修改时间：20:35:27" itemprop="dateCreated datePublished" datetime="2019-04-10T19:16:49+08:00">2019-04-10</time>
+              <time title="创建时间：2019-04-10 19:16:49 / 修改时间：20:39:23" itemprop="dateCreated datePublished" datetime="2019-04-10T19:16:49+08:00">2019-04-10</time>
             
 
             
@@ -532,8 +532,7 @@
 
       
         
-          
-            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    建立这个博客也已经三天了，写完第一个建站过程之后，一直不知道该如何下手去写。从知乎上查找“博客 怎么写”、去看别人的博客，刚开始到底怎么写呢？其实到现在我也不是特别明白。</p>
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    建立这个博客也已经三天了，写完第一个建站过程之后，一直不知道该如何下手去写。从知乎上查找“博客 怎么写”、去看别人的博客，刚开始到底怎么写呢？其实到现在我也不是特别明白。</p>
 <p>​    既然不明白，那就有什么写什么吧！自己正在学习java，建这个博客本意也是为了能提升自己做好笔记。下定决心就开始写了，先把今天学习的Spring基础写出来，以后在慢慢回顾Java以前的知识点。以下的文章，我是跟着慕课网的课程，以及看书查阅，总结而成的。</p>
 <h1 id="Spring是什么"><a href="#Spring是什么" class="headerlink" title="Spring是什么"></a>Spring是什么</h1><blockquote>
 <p><strong>Spring Framework</strong> 是一个开源的<a href="https://zh.wikipedia.org/wiki/Java" target="_blank" rel="noopener">Java</a>／<a href="https://zh.wikipedia.org/wiki/Java_EE" target="_blank" rel="noopener">Java EE</a>全功能栈（full-stack）的<a href="https://zh.wikipedia.org/wiki/%E8%BD%AF%E4%BB%B6%E6%A1%86%E6%9E%B6" target="_blank" rel="noopener">应用程序框架</a>，以<a href="https://zh.wikipedia.org/wiki/Apache_License_2.0" target="_blank" rel="noopener">Apache License 2.0</a>开源许可协议的形式发布，也有<a href="https://zh.wikipedia.org/wiki/.NET" target="_blank" rel="noopener">.NET</a>平台上的移植版本。该框架基于 <a href="http://www.wrox.com/WileyCDA/WroxTitle/productCd-0764543857.html" target="_blank" rel="noopener">Expert One-on-One Java EE Design and Development</a>（<a href="https://zh.wikipedia.org/wiki/Special:%E7%BD%91%E7%BB%9C%E4%B9%A6%E6%BA%90/0764543857" target="_blank" rel="noopener">ISBN 0-7645-4385-7</a>）一书中的代码，最初由Rod Johnson和Juergen Hoeller等开发。Spring Framework提供了一个简易的开发方式，这种开发方式，将避免那些可能致使底层代码变得繁杂混乱的大量的属性文件和帮助类。</p>
@@ -541,64 +540,16 @@
 </blockquote>
 <p>简单来说</p>
 <ul>
-<li>Spring是一个开源的Java/JavaEE全功能框架。也就是说可能贯穿整个开发过程，有全套的解决方案。</li>
-<li>它是为了简写代码而生的，可以有效的使复杂的代码变得简单，方便了程序开发。</li>
-</ul>
-<h1 id="Spring有什么优点"><a href="#Spring有什么优点" class="headerlink" title="Spring有什么优点"></a>Spring有什么优点</h1><ul>
-<li><strong>方便解耦，简单开发</strong><ul>
-<li>Spring就是一个大工厂，可以将所有对象创建和依赖关系的维护交给Spring管理，这样极大降低了耦合性，是开发过程变得简单。</li>
-</ul>
-</li>
-<li><strong>AOP编程的支持</strong><ul>
-<li>AOP就是面向切面编程，可以在不修改源代码的情况下仅程序动态统一的添加功能，可以对业务逻辑的各部分进行分离，从而提高的程序的复用性，降低了耦合</li>
-</ul>
-</li>
-<li><strong>声明式事务的支持</strong><ul>
-<li>只需要通过配置就可以完成对事务的管理，而无需手动编程</li>
-</ul>
-</li>
-<li><strong>方便程序的测试</strong><ul>
-<li>Spring对Junit4支持，可以通过注解方面的测试Spring程序</li>
-</ul>
-</li>
-<li><strong>方便继承各种优秀框架</strong><ul>
-<li>Spring不排斥各种优秀的开源框架，其内部提供了对各种优秀框架的直接支持</li>
-</ul>
-</li>
-<li><strong>降低JavaEE API的使用难度</strong><ul>
-<li>Spring对JavaEE开发中非常难用的一些API，都提供了封装，使这些API的使用难度大大降低</li>
-</ul>
-</li>
-<li><strong>高度开放性</strong><ul>
-<li>不强制使用框架，可以根据需求使用框架的部分或全部</li>
-</ul>
-</li>
-</ul>
-<h1 id="Spring模块"><a href="#Spring模块" class="headerlink" title="Spring模块"></a>Spring模块</h1><p><img src="/2019/04/10/Spring-基础入门/1554898850651.png" alt="1554898850651"></p>
-<ul>
-<li>Core Container<ul>
-<li>Spring的核心容器，是Spring框架的基础，作用是责管理对象的创建，管理，配置等等的操作。</li>
-</ul>
-</li>
-<li>AOP和Aspects<ul>
-<li>面向切面编程的能力，上面优点里已经说明，在做里不做介绍</li>
-</ul>
-</li>
-<li>Instrumentation/Messaging<ul>
-<li>提供了为JVM添加代理的功能。几乎不用。</li>
-</ul>
-</li>
-<li>Web<ul>
-<li>支持web开发， 包含了4个web组件</li>
-</ul>
-</li>
-<li>Date Access/Integrating<ul>
-<li>持久层，简化了数据访问的操作，同时提供了ORM框架的能力，可以对流行的ORM框架进行整合</li>
-</ul>
-</li>
-</ul>
-
+<li>Spring是一个开源的Java/JavaEE全功能框架。也就是说可能贯穿整个开发过程，有全套的解决方案。</li></ul>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/04/10/Spring-基础入门/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -715,7 +666,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-10 20:10:56" itemprop="dateModified" datetime="2019-04-10T20:10:56+08:00">2019-04-10</time>
+                <time title="修改时间：2019-04-10 20:39:36" itemprop="dateModified" datetime="2019-04-10T20:39:36+08:00">2019-04-10</time>
               
             
           </span>
@@ -788,155 +739,19 @@
 
       
         
-          
-            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>看到别人都在写blog，拥有自己的小站，实在羡慕不已。虽然自己也在做笔记，但是总感觉自己偷偷放着不那么舒服，不如放在网上和大家一起交流共勉。因此我决心要有自己的blog。最后终于完成了自己第一个的网站，也是自己第一个blog，也是有了自己的第一个域名ideashin.com。</p>
-<p>建站的过程并不怎么顺利，本来Hexo+GitHub是绝配，但是我本身就有一个限制（开小飞机）的vps，一直放着也是浪费，因此决心用vps部署一个Hexo的博客。因为以前并没有接触过，所以查看了很多资料才完成的。以下就是我建站的过程，遇到的问题我都放在最后面了，如果有幸能被看到的话希望能有所帮助。</p>
-<p>在此写下第一篇博客，也是自己的一个开端，希望对自己有能所提升。也方便自己以后查阅，也希望能有幸帮到他人。</p>
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    看到别人都在写blog，拥有自己的小站，实在羡慕不已。虽然自己也在做笔记，但是总感觉自己偷偷放着不那么舒服，不如放在网上和大家一起交流共勉。因此我决心要有自己的blog。最后终于完成了自己第一个的网站，也是自己第一个blog，也是有了自己的第一个域名ideashin.com。</p>
+<p>​    建站的过程并不怎么顺利，本来Hexo+GitHub是绝配，但是我本身就有一个限制（开小飞机）的vps，一直放着也是浪费，因此决心用vps部署一个Hexo的博客。因为以前并没有接触过，所以查看了很多资料才完成的。以下就是我建站的过程，遇到的问题我都放在最后面了，如果有幸能被看到的话希望能有所帮助。</p>
+<p>​    在此写下第一篇博客，也是自己的一个开端，希望对自己有能所提升。也方便自己以后查阅，也希望能有幸帮到他人。</p>
 <h1 id="本地安装"><a href="#本地安装" class="headerlink" title="本地安装"></a>本地安装</h1><h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>安装hexo需要在本机安装Git以及Node.js</p>
-<h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><ul>
-<li><p>从官网下载安装好后<a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a></p>
-<ul>
-<li>使用 git -version’可以查看安装的版本</li>
-</ul>
-</li>
-<li><p>配置用户信息，设置用户名以及邮箱</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git config --global user.name "用户名"</span><br><span class="line"><span class="meta">$</span> git config --global user.email "邮箱地址"</span><br><span class="line"><span class="meta">#</span>查看是否成功</span><br><span class="line"><span class="meta">$</span> git config --list</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>重要</strong> 获取key，后面配置SSH要用到</p>
-<p>在Git Bash中执行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>创建公钥</span><br><span class="line"><span class="meta">$</span> ssh-keygen -t rsa -C "邮箱地址"</span><br><span class="line"><span class="meta">#</span>然后获取复制公钥备用</span><br><span class="line"><span class="meta">$</span> cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h3><ul>
-<li><p>官网下载安装<a href="https://nodejs.org/" target="_blank" rel="noopener">https://nodejs.org</a></p>
-<p>输入node -version查看安装版本</p>
-</li>
-</ul>
-<h2 id="Hexo配置"><a href="#Hexo配置" class="headerlink" title="Hexo配置"></a>Hexo配置</h2><p>具体可以参照官方文档，有中文版就介绍也很详细，这里只简单配置</p>
-<p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/</a></p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>参照官方文档，使用下列代码安装</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<h3 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h3><p>在你想存放hexo的地方新建一个文件夹，如Hexo，然后在文件夹内右键启动git的git bash，执行如下代码</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo init</span><br><span class="line"><span class="meta">$</span> npm install</span><br></pre></td></tr></table></figure>
-<p><strong>注意：</strong> 不要用git init，这样会把整个hexo文件都同步到服务器，应该是hexo init</p>
-<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo clean &amp;&amp; hexo g &amp;&amp; hexo server</span><br></pre></td></tr></table></figure>
-<p>执行后可以输入网址本地查看<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000</a></p>
-<h1 id="Server操作"><a href="#Server操作" class="headerlink" title="Server操作"></a>Server操作</h1><h2 id="确保您的系统和apt包"><a href="#确保您的系统和apt包" class="headerlink" title="确保您的系统和apt包"></a>确保您的系统和apt包</h2><p>首先，通过运行以下命令确保您的系统和apt包列表完全更新：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> apt-get update -y</span><br><span class="line"><span class="meta">$</span> apt-get upgrade -y</span><br></pre></td></tr></table></figure>
-<h2 id="安装git、sudo、nginx"><a href="#安装git、sudo、nginx" class="headerlink" title="安装git、sudo、nginx"></a>安装git、sudo、nginx</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> apt install git</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>debian默认无sodu</span><br><span class="line"><span class="meta">$</span> apt-get install sudo</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> apt-get install nginx</span><br></pre></td></tr></table></figure>
-<p>检查版本确保安装</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git --version</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> nginx -V</span><br></pre></td></tr></table></figure>
-<h2 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a>配置nginx</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>切换目录</span><br><span class="line"><span class="meta">$</span> cd /etc/nginx/sites-available</span><br><span class="line"><span class="meta">#</span>备份默认配置</span><br><span class="line"><span class="meta">$</span> cp default default.bak </span><br><span class="line"><span class="meta">#</span>修改配置</span><br><span class="line"><span class="meta">$</span> vim default</span><br></pre></td></tr></table></figure>
-<p><img src="/2019/04/07/Hexo搭建个人博客并部署到Vps服务器/1554297275022.png" alt="1554297275022"></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>检查是否有错误</span><br><span class="line"><span class="meta">$</span> nginx -t </span><br><span class="line"><span class="meta">#</span>保存退出后，启动</span><br><span class="line"><span class="meta">$</span> nginx：systemctl start nginx</span><br><span class="line"><span class="meta">#</span>设置开机自动启动</span><br><span class="line"><span class="meta">$</span> systemctl enable nginx</span><br><span class="line"><span class="meta">#</span>查看运行状态</span><br><span class="line"><span class="meta">$</span> systemctl status nginx</span><br><span class="line"><span class="meta">#</span>显示running表示成功运行</span><br></pre></td></tr></table></figure>
-<h2 id="创建git用户"><a href="#创建git用户" class="headerlink" title="创建git用户"></a>创建git用户</h2><h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> adduser git</span><br></pre></td></tr></table></figure>
-<h3 id="赋予sudo权限"><a href="#赋予sudo权限" class="headerlink" title="赋予sudo权限"></a>赋予sudo权限</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> chmod 740 /etc/sudoers</span><br><span class="line"><span class="meta">$</span> vim /etc/sudoers</span><br></pre></td></tr></table></figure>
-<p>然后修改在root下面添加</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git ALL=(ALL) ALL</span><br></pre></td></tr></table></figure>
-<p><img src="/2019/04/07/Hexo搭建个人博客并部署到Vps服务器/1554293490911.png" alt="1554293490911"></p>
-<p>改回权限</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> chmod 400 /etc/sudoers</span><br></pre></td></tr></table></figure>
-<h2 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h2><h3 id="切换git用户，并到git用户目录"><a href="#切换git用户，并到git用户目录" class="headerlink" title="切换git用户，并到git用户目录"></a>切换git用户，并到git用户目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>切换到git用户</span><br><span class="line"><span class="meta">$</span> su git</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>转到git用户目录</span><br><span class="line"><span class="meta">$</span> cd /home/git</span><br></pre></td></tr></table></figure>
-<h3 id="配置ssh"><a href="#配置ssh" class="headerlink" title="配置ssh"></a>配置ssh</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 创建.ssh文件夹</span><br><span class="line"><span class="meta">$</span> mkdir ~/.ssh</span><br><span class="line"><span class="meta">#</span>输入可查看是否创建</span><br><span class="line"><span class="meta">$</span> ls -a</span><br><span class="line"><span class="meta">#</span> 创建authorized_keys文件并编辑</span><br><span class="line"><span class="meta">$</span> vim ~/.ssh/authorized_keys</span><br><span class="line"><span class="meta">#</span> 如果你还没有生成公钥，那么首先在本地电脑中执行 cat ~/.ssh/id_rsa.pub | pbcopy生成公钥</span><br><span class="line"><span class="meta">#</span> 再将公钥复制粘贴到authorized_keys</span><br><span class="line"><span class="meta">#</span> 保存关闭authorized_keys后，修改相应权限</span><br><span class="line"><span class="meta">$</span> chmod 600 ~/.ssh/authorized_keys</span><br><span class="line"><span class="meta">$</span> chmod 700 ~/.ssh</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>然后输入测试是否可以登录（免密？）</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -v git@<span class="number">68.168</span><span class="number">.141</span><span class="number">.184</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>默认22端口，不是则需要在后面加上<code>-p 端口号</code></p>
-</li>
-<li><p>WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!是以前配置过主机，需要进行删除</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vi ~/.ssh/known_hosts</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="创建git裸库"><a href="#创建git裸库" class="headerlink" title="创建git裸库"></a>创建git裸库</h2><ul>
-<li>创建裸库</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 回到git目录</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> /home/git</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用git用户创建git裸仓库，以blog.git为例</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git init --bare blog.git</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>根据前面配置的nginx中的根目录</p>
-<p><img src="/2019/04/07/Hexo搭建个人博客并部署到Vps服务器/1554301495222.png" alt="1554301495222"></p>
-</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">切换目录</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> /var/www/   </span></span><br><span class="line"><span class="meta">#</span><span class="bash">创建网站目录，以blog为例</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> mkdir blog</span></span><br></pre></td></tr></table></figure>
-<h2 id="检查用户权限"><a href="#检查用户权限" class="headerlink" title="检查用户权限"></a>检查用户权限</h2><p>检查一下之前的blog.git、.ssh、blog目录的用户组权限是否都为git:git</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ls -l /var/www/</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ls -l /homw/git/</span></span><br></pre></td></tr></table></figure>
-<p>如果不是则</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo chown git:git -R /var/www/blog</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo chown git:git -R /home/git/blog.git</span></span><br></pre></td></tr></table></figure>
-<h2 id="使用git-hooks同步网站根目录"><a href="#使用git-hooks同步网站根目录" class="headerlink" title="使用git-hooks同步网站根目录"></a>使用git-hooks同步网站根目录</h2><p>使用一个钩子文件：<code>post-receive</code>，每当git仓库接收到内容的时候，就会自动调用这个钩子，把内容同步到网站根目录。</p>
-<p><strong>git用户下执行</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">切换到hooks目录下</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> /home/git/blog.git/hooks</span></span><br><span class="line"><span class="meta">#</span><span class="bash">创建文件</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> vim post-receive</span></span><br></pre></td></tr></table></figure>
-<p>添加如下</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">GIT_REPO=/home/git/blog.git</span><br><span class="line">TMP_GIT_CLONE=/home/git/tmp/hexo_tmp	#在这个文件夹下随便创建文件，不然出错</span><br><span class="line">PUBLIC_WWW=/var/www/blog				#在这个文件夹下随便创建文件，不然出错</span><br><span class="line">rm -rf $&#123;TMP_GIT_CLONE&#125;</span><br><span class="line">git clone $GIT_REPO $TMP_GIT_CLONE</span><br><span class="line">rm -rf $&#123;PUBLIC_WWW&#125;/*</span><br><span class="line">cp -rf $&#123;TMP_GIT_CLONE&#125;/* $&#123;PUBLIC_WWW&#125;</span><br></pre></td></tr></table></figure>
-<p>保存后，执行以下赋予权限</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> chmod +x post-receive</span></span><br></pre></td></tr></table></figure>
-<h2 id="关闭git用户的shell权限"><a href="#关闭git用户的shell权限" class="headerlink" title="关闭git用户的shell权限"></a>关闭git用户的shell权限</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">执行</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> vim /etc/paswd</span></span><br></pre></td></tr></table></figure>
-<p>将最后一行</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git:</span><span class="symbol">x:</span><span class="number">1000</span><span class="symbol">:</span><span class="number">1000</span><span class="symbol">:</span><span class="symbol">:/home/git</span><span class="symbol">:/bin/bash</span></span><br><span class="line"><span class="comment">#改为</span></span><br><span class="line"><span class="symbol">git:</span><span class="symbol">x:</span><span class="number">1000</span><span class="symbol">:</span><span class="number">1000</span><span class="symbol">:</span><span class="symbol">:/home/git</span><span class="symbol">:/usr/bin/git-shell</span></span><br></pre></td></tr></table></figure>
-<h1 id="本地操作"><a href="#本地操作" class="headerlink" title="本地操作"></a>本地操作</h1><h2 id="配置本地Hexo的-config-yml"><a href="#配置本地Hexo的-config-yml" class="headerlink" title="配置本地Hexo的_config.yml"></a>配置本地Hexo的_config.yml</h2><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span> </span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="string">git@你的服务器IP:/home/git/blog.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-<h2 id="同步到服务器"><a href="#同步到服务器" class="headerlink" title="同步到服务器"></a>同步到服务器</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">清理、生成、部署</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span></span><br></pre></td></tr></table></figure>
-<p>到现在已经全部完成了，可以自己进行一些配置进一步完善</p>
-<h1 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h1><h2 id="服务器使用sodu命令时无法使用"><a href="#服务器使用sodu命令时无法使用" class="headerlink" title="服务器使用sodu命令时无法使用"></a>服务器使用sodu命令时无法使用</h2><ul>
-<li><p>原因</p>
-<ul>
-<li>debian默认sodu</li>
-</ul>
-</li>
-<li><p>解决</p>
-<p>执行如下</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> apt-get install sudo</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="systemctl-command-not-found"><a href="#systemctl-command-not-found" class="headerlink" title="systemctl: command not found"></a>systemctl: command not found</h2><ul>
-<li><p>原因</p>
-<ul>
-<li>系统版本旧就会没有systemctl命令</li>
-</ul>
-</li>
-<li><p>解决</p>
-<p>使用service命令</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo service &#123;servicename&#125; &#123;stop|start|restart&#125;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="fatal-Not-a-git-repository-or-any-of-the-parent-directories-git"><a href="#fatal-Not-a-git-repository-or-any-of-the-parent-directories-git" class="headerlink" title="fatal: Not a git repository (or any of the parent directories): .git"></a>fatal: Not a git repository (or any of the parent directories): .git</h2><ul>
-<li>原因<ul>
-<li>提示说没有.git这样一个目录</li>
-</ul>
-</li>
-<li>解决<ul>
-<li>git init就好了</li>
-</ul>
-</li>
-</ul>
-<h2 id="WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED"><a href="#WARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED" class="headerlink" title="WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!"></a>WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!</h2><ul>
-<li><p>原因</p>
-<ul>
-<li>本机git连接过服务器地址，但是服务器重装了，需要进行删除</li>
-</ul>
-</li>
-<li><p>解决</p>
-<p>输入以下命令，删除文件中要连接的服务器</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vi /Users/wangdong/.ssh/known_hosts</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="repository-‘xxxxxxxxx’does-not-exist"><a href="#repository-‘xxxxxxxxx’does-not-exist" class="headerlink" title="repository ‘xxxxxxxxx’does not exist"></a>repository ‘xxxxxxxxx’does not exist</h2><ul>
-<li>原因<ul>
-<li>如果要删除这个目录下的文件，这个目录下必须有文件，不然删除就是无意义的</li>
-</ul>
-</li>
-<li>解决<ul>
-<li>提前在该目录下新建一些文件</li>
-</ul>
-</li>
-</ul>
-<h2 id="在clone一些git项目的时候，有些可能时间太久远，下载失败"><a href="#在clone一些git项目的时候，有些可能时间太久远，下载失败" class="headerlink" title="在clone一些git项目的时候，有些可能时间太久远，下载失败"></a>在clone一些git项目的时候，有些可能时间太久远，下载失败</h2><ul>
-<li><p>解决</p>
-<p>将git clone http:改为git clone git:</p>
-</li>
-</ul>
-
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/04/07/Hexo搭建个人博客并部署到Vps服务器/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
