@@ -96,16 +96,23 @@
 
 
 
-  <meta name="description" content="Always believe that something wonderful is about to happen.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="IDEAShin">
-<meta property="og:url" content="http://www.ideashin.com/index.html">
+  <meta name="description" content="前言今天跟着老师回顾了以下集合的体系结构以及常用的方法，听得明白与否，也只能写下总结以下才能知道。也不知道自己写所学有没有遗漏或者错误的地方，有幸被看到的话，希望能指点一二。 概述本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collecti">
+<meta name="keywords" content="Java,集合">
+<meta property="og:type" content="article">
+<meta property="og:title" content="集合体系结构以及常用方法总结">
+<meta property="og:url" content="http://www.ideashin.com/2019/04/11/集合体系结构以及常用方法总结/index.html">
 <meta property="og:site_name" content="IDEAShin">
-<meta property="og:description" content="Always believe that something wonderful is about to happen.">
+<meta property="og:description" content="前言今天跟着老师回顾了以下集合的体系结构以及常用的方法，听得明白与否，也只能写下总结以下才能知道。也不知道自己写所学有没有遗漏或者错误的地方，有幸被看到的话，希望能指点一二。 概述本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collecti">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://www.ideashin.com/2019/04/11/集合体系结构以及常用方法总结/1554989428619.png">
+<meta property="og:image" content="http://www.ideashin.com/2019/04/11/集合体系结构以及常用方法总结/1554988772207.png">
+<meta property="og:image" content="http://www.ideashin.com/2019/04/11/集合体系结构以及常用方法总结/1554988606489.png">
+<meta property="og:image" content="http://www.ideashin.com/2019/04/11/集合体系结构以及常用方法总结/1554989460626.png">
+<meta property="og:updated_time" content="2019-04-11T13:35:22.723Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IDEAShin">
-<meta name="twitter:description" content="Always believe that something wonderful is about to happen.">
+<meta name="twitter:title" content="集合体系结构以及常用方法总结">
+<meta name="twitter:description" content="前言今天跟着老师回顾了以下集合的体系结构以及常用的方法，听得明白与否，也只能写下总结以下才能知道。也不知道自己写所学有没有遗漏或者错误的地方，有幸被看到的话，希望能指点一二。 概述本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collecti">
+<meta name="twitter:image" content="http://www.ideashin.com/2019/04/11/集合体系结构以及常用方法总结/1554989428619.png">
 
 
 
@@ -113,7 +120,7 @@
 
   
   
-  <link rel="canonical" href="http://www.ideashin.com/">
+  <link rel="canonical" href="http://www.ideashin.com/2019/04/11/集合体系结构以及常用方法总结/">
 
 
 
@@ -123,7 +130,7 @@
   };
 </script>
 
-  <title>IDEAShin</title>
+  <title>集合体系结构以及常用方法总结 | IDEAShin</title>
   
 
 
@@ -171,8 +178,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,7 +220,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -392,9 +398,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -426,10 +432,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/11/集合体系结构以及常用方法总结/" class="post-title-link" itemprop="url">集合体系结构以及常用方法总结</a>
+          <h1 class="post-title" itemprop="name headline">集合体系结构以及常用方法总结
+
               
             
           </h1>
@@ -513,6 +517,13 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
           
 
@@ -531,9 +542,7 @@
       
 
       
-        
-          
-            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天跟着老师回顾了以下集合的体系结构以及常用的方法，听得明白与否，也只能写下总结以下才能知道。也不知道自己写所学有没有遗漏或者错误的地方，有幸被看到的话，希望能指点一二。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天跟着老师回顾了以下集合的体系结构以及常用的方法，听得明白与否，也只能写下总结以下才能知道。也不知道自己写所学有没有遗漏或者错误的地方，有幸被看到的话，希望能指点一二。</p>
 <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collection，Map提供的是<strong>key到value的映射</strong></p>
 <p><strong>集合</strong>：故名思意，就是一堆东西放在一起。在Java里将任意数量的<strong>具有共同属性的对象</strong>存放在一个集合工具类。</p>
 <ul>
@@ -556,8 +565,6 @@
 <h2 id="Map接口"><a href="#Map接口" class="headerlink" title="Map接口"></a>Map接口</h2><p><img src="/2019/04/11/集合体系结构以及常用方法总结/1554989460626.png" alt="Map接口"></p>
 <h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><h2 id="Collection的常用方法"><a href="#Collection的常用方法" class="headerlink" title="Collection的常用方法"></a>Collection的常用方法</h2><p>常用方法不在单都说set或者List了，因为都是来自Collection的继承，方法都是一样的，所以这里就将划分为方法类型来说。</p>
 
-          
-        
       
     </div>
 
@@ -575,615 +582,65 @@
     
 
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.ideashin.com/2019/04/10/Git基础命令操作入门/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shin">
-      <meta itemprop="description" content="Always believe that something wonderful is about to happen.">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="IDEAShin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/10/Git基础命令操作入门/" class="post-title-link" itemprop="url">Git基础命令操作入门</a>
-              
-            
-          </h1>
+      <div>
         
 
-        <div class="post-meta">
-          <span class="post-time">
 
-            
-            
-            
 
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
 
-              
-                
-              
+  
 
-              <time title="创建时间：2019-04-10 21:01:59" itemprop="dateCreated datePublished" datetime="2019-04-10T21:01:59+08:00">2019-04-10</time>
-            
 
-            
-              
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-11 21:46:05" itemprop="dateModified" datetime="2019-04-11T21:46:05+08:00">2019-04-11</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/实用技术/" itemprop="url" rel="index"><span itemprop="name">实用技术</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/实用技术/编程软件/" itemprop="url" rel="index"><span itemprop="name">编程软件</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/10/Git基础命令操作入门/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/10/Git基础命令操作入门/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Shin</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
     
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ul>
-<li>Git是一个<strong>分散式版本控制</strong>软件。</li>
-<li>它会把你每次修改提交的内容都记录下来， 如果某一次修改出错，想回到修改之前，可以直接通过git跳到上一次提交的文件内容。</li>
+    <a href="http://www.ideashin.com/2019/04/11/集合体系结构以及常用方法总结/" title="集合体系结构以及常用方法总结">http://www.ideashin.com/2019/04/11/集合体系结构以及常用方法总结/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
 </ul>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
-<li><p>安装</p>
-<p>官网下载</p>
-</li>
-<li><p>配置用户信息</p></li></ul>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/10/Git基础命令操作入门/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
+      </div>
     
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.ideashin.com/2019/04/10/Spring-基础入门/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shin">
-      <meta itemprop="description" content="Always believe that something wonderful is about to happen.">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="IDEAShin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/10/Spring-基础入门/" class="post-title-link" itemprop="url">Spring-基础入门</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-10 19:16:49 / 修改时间：21:06:12" itemprop="dateCreated datePublished" datetime="2019-04-10T19:16:49+08:00">2019-04-10</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a></span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
-
+            <a href="/tags/集合/" rel="tag"># 集合</a>
           
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/10/Spring-基础入门/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/10/Spring-基础入门/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    建立这个博客也已经三天了，写完第一个建站过程之后，一直不知道该如何下手去写。从知乎上查找“博客 怎么写”、去看别人的博客，刚开始到底怎么写呢？其实到现在我也不是特别明白。</p>
-<p>​    既然不明白，那就有什么写什么吧！自己正在学习java，建这个博客本意也是为了能提升自己做好笔记。下定决心就开始写了，先把今天学习的Spring基础写出来，以后在慢慢回顾Java以前的知识点。以下的文章，我是跟着慕课网的课程，以及看书查阅，总结而成的。</p>
-<h1 id="Spring是什么"><a href="#Spring是什么" class="headerlink" title="Spring是什么"></a>Spring是什么</h1><blockquote>
-<p><strong>Spring Framework</strong> 是一个开源的<a href="https://zh.wikipedia.org/wiki/Java" target="_blank" rel="noopener">Java</a>／<a href="https://zh.wikipedia.org/wiki/Java_EE" target="_blank" rel="noopener">Java EE</a>全功能栈（full-stack）的<a href="https://zh.wikipedia.org/wiki/%E8%BD%AF%E4%BB%B6%E6%A1%86%E6%9E%B6" target="_blank" rel="noopener">应用程序框架</a>，以<a href="https://zh.wikipedia.org/wiki/Apache_License_2.0" target="_blank" rel="noopener">Apache License 2.0</a>开源许可协议的形式发布，</p></blockquote>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/10/Spring-基础入门/#more" rel="contents">
-                阅读全文 &raquo;
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/10/Git基础命令操作入门/" rel="next" title="Git基础命令操作入门">
+                <i class="fa fa-chevron-left"></i> Git基础命令操作入门
               </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.ideashin.com/2019/04/07/Hexo搭建个人博客并部署到Vps服务器/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shin">
-      <meta itemprop="description" content="Always believe that something wonderful is about to happen.">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="IDEAShin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/07/Hexo搭建个人博客并部署到Vps服务器/" class="post-title-link" itemprop="url">Hexo搭建个人博客并部署到Vps服务器</a>
-              
             
-          </h1>
-        
+          </div>
 
-        <div class="post-meta">
-          <span class="post-time">
+          <span class="post-nav-divider"></span>
 
+          <div class="post-nav-prev post-nav-item">
             
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-07 15:50:03" itemprop="dateCreated datePublished" datetime="2019-04-07T15:50:03+08:00">2019-04-07</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-10 21:09:19" itemprop="dateModified" datetime="2019-04-10T21:09:19+08:00">2019-04-10</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/实用技术/" itemprop="url" rel="index"><span itemprop="name">实用技术</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/实用技术/博客搭建/" itemprop="url" rel="index"><span itemprop="name">博客搭建</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/07/Hexo搭建个人博客并部署到Vps服务器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/07/Hexo搭建个人博客并部署到Vps服务器/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    看到别人都在写blog，拥有自己的小站，实在羡慕不已。虽然自己也在做笔记，但是总感觉自己偷偷放着不那么舒服，不如放在网上和大家一起交流共勉。因此我决心要有自己的blog。最后终于完成了自己第一个的网站，也是自己第一个blog，也是有了自己的第一个域名ideashin.com。</p>
-<p>​    建站的过程并不怎么顺利，本来Hexo+GitHub是绝配，但是我本身就有一个限制（开小飞机）的vps，一直放着也是浪费，因此决心用vps部署一个Hexo的博客。因为以前并没有接触过，所以查看了很多资料才完成的。以下就是我建站的过程，遇到的问题我都放在最后面了，如果有幸能被看到的话希望能有所帮助。</p>
-<p>​    在此写下第一篇博客，也是自己的一个开端，希望对自己有能所提升。也方便自己以后查阅，也希望能有幸帮到他人。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/07/Hexo搭建个人博客并部署到Vps服务器/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1193,14 +650,22 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -1220,8 +685,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1357,6 +831,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">2.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#体系结构"><span class="nav-number">3.</span> <span class="nav-text">体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Collection接口"><span class="nav-number">3.1.</span> <span class="nav-text">Collection接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Iterable与Iterator的关系"><span class="nav-number">3.1.1.</span> <span class="nav-text">Iterable与Iterator的关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map接口"><span class="nav-number">3.2.</span> <span class="nav-text">Map接口</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用方法"><span class="nav-number">4.</span> <span class="nav-text">常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Collection的常用方法"><span class="nav-number">4.1.</span> <span class="nav-text">Collection的常用方法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -1516,6 +1007,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
 
   
 
@@ -1534,9 +1029,28 @@
   <script id="dsq-count-scr" src="https://ideashin.disqus.com/count.js" async></script>
 
 
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://www.ideashin.com/2019/04/11/集合体系结构以及常用方法总结/";
+    this.page.identifier = "2019/04/11/集合体系结构以及常用方法总结/";
+    this.page.title = '集合体系结构以及常用方法总结';
+    };
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://ideashin.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  
+    loadComments();
+  
+</script>
 
 
 
+
+
+  
 
 
   
