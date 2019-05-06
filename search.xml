@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F04%2F29%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[使用MyBatis查看数据库出现多页面重复的问题]]></title>
+    <url>%2F2019%2F05%2F06%2F%E4%BD%BF%E7%94%A8MyBatis%E6%9F%A5%E7%9C%8B%E5%A4%9A%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E5%87%BA%E7%8E%B0%E5%90%8C%E4%B8%80%E7%BB%93%E6%9E%9C%2F</url>
+    <content type="text"><![CDATA[错误详情进入多个页面查看不同用户信息返回的总是第一个用户的信息 错误详情 123456Caused by: org.apache.ibatis.executor.ExecutorException: Executor was closed. at org.apache.ibatis.executor.BaseExecutor.createCacheKey(BaseExecutor.java:197) at org.apache.ibatis.executor.CachingExecutor.createCacheKey(CachingExecutor.java:146) at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:82) at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) ... 29 more 发现原因 原因：sqSession只在UserDao创建的时候才会创建一次，一旦销毁没办法再次获得 解决办法解决，只要获取sqlSession放在一个方法里面就好了 123456private SqlSession sqlSession; private SqlSession getSqlSession() &#123; sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession(); return sqlSession;&#125;]]></content>
+      <categories>
+        <category>Java</category>
+        <category>问题解决</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>MyBatis</tag>
+        <tag>error</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[快速了解集合体系结构以及常用方法]]></title>
     <url>%2F2019%2F04%2F11%2F%E9%9B%86%E5%90%88%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E4%BB%A5%E5%8F%8A%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93%2F</url>
-    <content type="text"><![CDATA[前言今天跟着老师回顾了以下集合的体系结构以及常用的方法，听得明白与否，也只能写下总结以下才能知道。也不知道自己写所学有没有遗漏或者错误的地方，有幸被看到的话，希望能指点一二。 概述本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collection，Map提供的是key到value的映射 集合：故名思意，就是一堆东西放在一起。在Java里将任意数量的具有共同属性的对象存放在一个集合工具类。 注意集合只能存放对象，存储int类型的数据“1”，也会自动转换为Integer类 Map集合是以键值对的形式存在 集合比数组更加灵活，它的数据存储没有限制，对数据的增删十分方便，试用于无法预测存储数据的数量 体系结构Collection接口 Iterable与Iterator的关系说到体系结构，大家能看到，Collection是继承中Iterable而来的，那么这又和Iterator有什么关系呢？ Iterable属于java.lang包，Ierrator以及Collection属于java.util包 Iterator也就是迭代器接口，它里面提供了迭代器的方法 在Iterable接口中，调用了Iterator类型的的iterator()方法，返回一个T类型的迭代器 Map接口 List概念 List（序列）就是一个元素有序且可重复的集合 可以自由的控制元素的增删 ArrayList12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758@Test public void testArrayList() &#123; List list = new ArrayList(); System.out.println("===========================增加"); //增加---add(E e) list.add("www"); list.add("ideashin"); list.add(".com"); list.add("shin' blog"); //输出个数 System.out.println("size="+list.size()); // 遍历输出 for (Object test:list) &#123; System.out.println(test); &#125; System.out.println("--------------增加到指定位置"); //add(int index, E element),从0开始存储,也就是add(n-1, element) list.add(3, "ideashin"); // 遍历输出 for (int i=0; i&lt;list.size();i++) &#123; System.out.println(list.get(i)); &#125;//看到输出结果可以了解到List的集合中的元素是可重复的 System.out.println("--------------指定集合增加到集合末尾"); //addAll(Collection&lt;? extends E&gt; c) List list2 = new ArrayList(); list2.add("java"); list2.add("linux"); list.addAll(list2); // 输出 System.out.println(list); System.out.println("--------------指定集合增加到集合指定位置"); //addAll(int index, Collection&lt;? extends E&gt; c) List list3 = new ArrayList(); list3.add("猪肉"); list3.add("牛肉"); list.addAll(3, list3); // 遍历输出 for (Object test:list) &#123; System.out.println(test); &#125; System.out.println("===========================删除"); //删除第2个元素,从0开始存储,也就是remove(n-1) list.remove(1);//或者 list.remove(".com"); // 输出 for (Object test:list ) &#123; System.out.println(test); &#125; System.out.println("--------------删除所有元素"); // list.removeAll(list); list.clear(); System.out.println(list); &#125;]]></content>
+    <content type="text"><![CDATA[概述本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collection，Map提供的是key到value的映射 集合：故名思意，就是一堆东西放在一起。在Java里将任意数量的具有共同属性的对象存放在一个集合工具类。 注意集合只能存放对象，存储int类型的数据“1”，也会自动转换为Integer类 Map集合是以键值对的形式存在 集合比数组更加灵活，它的数据存储没有限制，对数据的增删十分方便，试用于无法预测存储数据的数量 体系结构Collection接口 Iterable与Iterator的关系说到体系结构，大家能看到，Collection是继承中Iterable而来的，那么这又和Iterator有什么关系呢？ Iterable属于java.lang包，Ierrator以及Collection属于java.util包 Iterator也就是迭代器接口，它里面提供了迭代器的方法 在Iterable接口中，调用了Iterator类型的的iterator()方法，返回一个T类型的迭代器 Map接口 List概念 List（序列）就是一个元素有序且可重复的集合 可以自由的控制元素的增删 ArrayList12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758@Test public void testArrayList() &#123; List list = new ArrayList(); System.out.println("===========================增加"); //增加---add(E e) list.add("www"); list.add("ideashin"); list.add(".com"); list.add("shin' blog"); //输出个数 System.out.println("size="+list.size()); // 遍历输出 for (Object test:list) &#123; System.out.println(test); &#125; System.out.println("--------------增加到指定位置"); //add(int index, E element),从0开始存储,也就是add(n-1, element) list.add(3, "ideashin"); // 遍历输出 for (int i=0; i&lt;list.size();i++) &#123; System.out.println(list.get(i)); &#125;//看到输出结果可以了解到List的集合中的元素是可重复的 System.out.println("--------------指定集合增加到集合末尾"); //addAll(Collection&lt;? extends E&gt; c) List list2 = new ArrayList(); list2.add("java"); list2.add("linux"); list.addAll(list2); // 输出 System.out.println(list); System.out.println("--------------指定集合增加到集合指定位置"); //addAll(int index, Collection&lt;? extends E&gt; c) List list3 = new ArrayList(); list3.add("猪肉"); list3.add("牛肉"); list.addAll(3, list3); // 遍历输出 for (Object test:list) &#123; System.out.println(test); &#125; System.out.println("===========================删除"); //删除第2个元素,从0开始存储,也就是remove(n-1) list.remove(1);//或者 list.remove(".com"); // 输出 for (Object test:list ) &#123; System.out.println(test); &#125; System.out.println("--------------删除所有元素"); // list.removeAll(list); list.clear(); System.out.println(list); &#125;]]></content>
       <categories>
         <category>Java</category>
-        <category>集合</category>
+        <category>基础知识</category>
       </categories>
       <tags>
         <tag>Java</tag>
@@ -36,7 +45,7 @@
     <content type="text"><![CDATA[前言​ 建立这个博客也已经三天了，写完第一个建站过程之后，一直不知道该如何下手去写。从知乎上查找“博客 怎么写”、去看别人的博客，刚开始到底怎么写呢？其实到现在我也不是特别明白。 ​ 既然不明白，那就有什么写什么吧！自己正在学习java，建这个博客本意也是为了能提升自己做好笔记。下定决心就开始写了，先把今天学习的Spring基础写出来，以后在慢慢回顾Java以前的知识点。以下的文章，我是跟着慕课网的课程，以及看书查阅，总结而成的。 Spring是什么 Spring Framework 是一个开源的Java／Java EE全功能栈（full-stack）的应用程序框架，以Apache License 2.0开源许可协议的形式发布，也有.NET平台上的移植版本。该框架基于 Expert One-on-One Java EE Design and Development（ISBN 0-7645-4385-7）一书中的代码，最初由Rod Johnson和Juergen Hoeller等开发。Spring Framework提供了一个简易的开发方式，这种开发方式，将避免那些可能致使底层代码变得繁杂混乱的大量的属性文件和帮助类。 ——wiki 简单来说 Spring是一个开源的Java/JavaEE全功能框架。也就是说可能贯穿整个开发过程，有全套的解决方案。 它是为了简写代码而生的，可以有效的使复杂的代码变得简单，方便了程序开发。 Spring有什么优点 方便解耦，简单开发 Spring就是一个大工厂，可以将所有对象创建和依赖关系的维护交给Spring管理，这样极大降低了耦合性，是开发过程变得简单。 AOP编程的支持 AOP就是面向切面编程，可以在不修改源代码的情况下仅程序动态统一的添加功能，可以对业务逻辑的各部分进行分离，从而提高的程序的复用性，降低了耦合 声明式事务的支持 只需要通过配置就可以完成对事务的管理，而无需手动编程 方便程序的测试 Spring对Junit4支持，可以通过注解方面的测试Spring程序 方便继承各种优秀框架 Spring不排斥各种优秀的开源框架，其内部提供了对各种优秀框架的直接支持 降低JavaEE API的使用难度 Spring对JavaEE开发中非常难用的一些API，都提供了封装，使这些API的使用难度大大降低 高度开放性 不强制使用框架，可以根据需求使用框架的部分或全部 Spring模块 Core Container Spring的核心容器，是Spring框架的基础，作用是责管理对象的创建，管理，配置等等的操作。 AOP和Aspects 面向切面编程的能力，上面优点里已经说明，在做里不做介绍 Instrumentation/Messaging 提供了为JVM添加代理的功能。几乎不用。 Web 支持web开发， 包含了4个web组件 Date Access/Integrating 持久层，简化了数据访问的操作，同时提供了ORM框架的能力，可以对流行的ORM框架进行整合]]></content>
       <categories>
         <category>Java</category>
-        <category>Spring</category>
+        <category>基础知识</category>
       </categories>
       <tags>
         <tag>Java</tag>

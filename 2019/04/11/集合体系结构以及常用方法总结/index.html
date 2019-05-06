@@ -96,22 +96,22 @@
 
 
 
-  <meta name="description" content="前言今天跟着老师回顾了以下集合的体系结构以及常用的方法，听得明白与否，也只能写下总结以下才能知道。也不知道自己写所学有没有遗漏或者错误的地方，有幸被看到的话，希望能指点一二。 概述本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collecti">
+  <meta name="description" content="概述本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collection，Map提供的是key到value的映射 集合：故名思意，就是一堆东西放在一起。在Java里将任意数量的具有共同属性的对象存放在一个集合工具类。  注意集合只能存放对象，存">
 <meta name="keywords" content="Java,集合">
 <meta property="og:type" content="article">
 <meta property="og:title" content="快速了解集合体系结构以及常用方法">
 <meta property="og:url" content="http://www.ideashin.com/2019/04/11/集合体系结构以及常用方法总结/index.html">
 <meta property="og:site_name" content="IDEAShin">
-<meta property="og:description" content="前言今天跟着老师回顾了以下集合的体系结构以及常用的方法，听得明白与否，也只能写下总结以下才能知道。也不知道自己写所学有没有遗漏或者错误的地方，有幸被看到的话，希望能指点一二。 概述本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collecti">
+<meta property="og:description" content="概述本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collection，Map提供的是key到value的映射 集合：故名思意，就是一堆东西放在一起。在Java里将任意数量的具有共同属性的对象存放在一个集合工具类。  注意集合只能存放对象，存">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://www.ideashin.com/2019/04/11/集合体系结构以及常用方法总结/1554989428619.png">
 <meta property="og:image" content="http://www.ideashin.com/2019/04/11/集合体系结构以及常用方法总结/1554988772207.png">
 <meta property="og:image" content="http://www.ideashin.com/2019/04/11/集合体系结构以及常用方法总结/1554988606489.png">
 <meta property="og:image" content="http://www.ideashin.com/2019/04/11/集合体系结构以及常用方法总结/1554989460626.png">
-<meta property="og:updated_time" content="2019-04-17T11:32:10.000Z">
+<meta property="og:updated_time" content="2019-05-06T01:13:39.638Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="快速了解集合体系结构以及常用方法">
-<meta name="twitter:description" content="前言今天跟着老师回顾了以下集合的体系结构以及常用的方法，听得明白与否，也只能写下总结以下才能知道。也不知道自己写所学有没有遗漏或者错误的地方，有幸被看到的话，希望能指点一二。 概述本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collecti">
+<meta name="twitter:description" content="概述本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collection，Map提供的是key到value的映射 集合：故名思意，就是一堆东西放在一起。在Java里将任意数量的具有共同属性的对象存放在一个集合工具类。  注意集合只能存放对象，存">
 <meta name="twitter:image" content="http://www.ideashin.com/2019/04/11/集合体系结构以及常用方法总结/1554989428619.png">
 
 
@@ -270,7 +270,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">5</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">7</span></a>
 
   </li>
         
@@ -475,7 +475,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-17 19:32:10" itemprop="dateModified" datetime="2019-04-17T19:32:10+08:00">2019-04-17</time>
+                <time title="修改时间：2019-05-06 09:13:39" itemprop="dateModified" datetime="2019-05-06T09:13:39+08:00">2019-05-06</time>
               
             
           </span>
@@ -499,7 +499,7 @@
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/集合/" itemprop="url" rel="index"><span itemprop="name">集合</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/基础知识/" itemprop="url" rel="index"><span itemprop="name">基础知识</span></a></span>
 
                 
                 
@@ -554,8 +554,7 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天跟着老师回顾了以下集合的体系结构以及常用的方法，听得明白与否，也只能写下总结以下才能知道。也不知道自己写所学有没有遗漏或者错误的地方，有幸被看到的话，希望能指点一二。</p>
-<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collection，Map提供的是<strong>key到value的映射</strong></p>
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collection，Map提供的是<strong>key到value的映射</strong></p>
 <p><strong>集合</strong>：故名思意，就是一堆东西放在一起。在Java里将任意数量的<strong>具有共同属性的对象</strong>存放在一个集合工具类。</p>
 <ul>
 <li>注意集合只能存放对象，存储int类型的数据“1”，也会自动转换为Integer类</li>
@@ -654,8 +653,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/29/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/06/使用MyBatis查看多用户信息出现同一结果/" rel="prev" title="使用MyBatis查看数据库出现多页面重复的问题">
+                使用MyBatis查看数据库出现多页面重复的问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -790,7 +789,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -864,7 +867,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">2.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#体系结构"><span class="nav-number">3.</span> <span class="nav-text">体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Collection接口"><span class="nav-number">3.1.</span> <span class="nav-text">Collection接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Iterable与Iterator的关系"><span class="nav-number">3.1.1.</span> <span class="nav-text">Iterable与Iterator的关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map接口"><span class="nav-number">3.2.</span> <span class="nav-text">Map接口</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#List"><span class="nav-number">4.</span> <span class="nav-text">List</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">4.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ArrayList"><span class="nav-number">4.2.</span> <span class="nav-text">ArrayList</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#体系结构"><span class="nav-number">2.</span> <span class="nav-text">体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Collection接口"><span class="nav-number">2.1.</span> <span class="nav-text">Collection接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Iterable与Iterator的关系"><span class="nav-number">2.1.1.</span> <span class="nav-text">Iterable与Iterator的关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map接口"><span class="nav-number">2.2.</span> <span class="nav-text">Map接口</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#List"><span class="nav-number">3.</span> <span class="nav-text">List</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">3.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ArrayList"><span class="nav-number">3.2.</span> <span class="nav-text">ArrayList</span></a></li></ol></li></ol></div>
             
 
           </div>
