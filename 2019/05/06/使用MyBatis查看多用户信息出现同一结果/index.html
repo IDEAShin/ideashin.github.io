@@ -105,7 +105,7 @@
 <meta property="og:description" content="错误详情进入多个页面查看不同用户信息返回的总是第一个用户的信息  错误详情 123456Caused by: org.apache.ibatis.executor.ExecutorException: Executor was closed.	at org.apache.ibatis.executor.BaseExecutor.createCacheKey(BaseExecutor.java:19">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://www.ideashin.com/2019/05/06/使用MyBatis查看多用户信息出现同一结果/1553325494592.png">
-<meta property="og:updated_time" content="2019-05-06T01:19:03.161Z">
+<meta property="og:updated_time" content="2019-05-06T01:21:18.380Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用MyBatis查看多用户信息出现同一结果">
 <meta name="twitter:description" content="错误详情进入多个页面查看不同用户信息返回的总是第一个用户的信息  错误详情 123456Caused by: org.apache.ibatis.executor.ExecutorException: Executor was closed.	at org.apache.ibatis.executor.BaseExecutor.createCacheKey(BaseExecutor.java:19">
@@ -455,7 +455,7 @@
                 
               
 
-              <time title="创建时间：2019-05-06 09:03:25 / 修改时间：09:19:03" itemprop="dateCreated datePublished" datetime="2019-05-06T09:03:25+08:00">2019-05-06</time>
+              <time title="创建时间：2019-05-06 09:03:25 / 修改时间：09:21:18" itemprop="dateCreated datePublished" datetime="2019-05-06T09:03:25+08:00">2019-05-06</time>
             
 
             
@@ -542,7 +542,7 @@
         <h1 id="错误详情"><a href="#错误详情" class="headerlink" title="错误详情"></a>错误详情</h1><p>进入多个页面查看不同用户信息返回的总是第一个用户的信息</p>
 <ul>
 <li><p>错误详情</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Caused by: org.apache.ibatis.executor.ExecutorException: Executor was closed.</span><br><span class="line">	at org.apache.ibatis.executor.BaseExecutor.createCacheKey(BaseExecutor.java:197)</span><br><span class="line">	at org.apache.ibatis.executor.CachingExecutor.createCacheKey(CachingExecutor.java:146)</span><br><span class="line">	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:82)</span><br><span class="line">	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)</span><br><span class="line">	... 29 more</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Caused by: org<span class="selector-class">.apache</span><span class="selector-class">.ibatis</span><span class="selector-class">.executor</span><span class="selector-class">.ExecutorException</span>: Executor was closed.</span><br><span class="line">	at org<span class="selector-class">.apache</span><span class="selector-class">.ibatis</span><span class="selector-class">.executor</span><span class="selector-class">.BaseExecutor</span><span class="selector-class">.createCacheKey</span>(BaseExecutor<span class="selector-class">.java</span>:<span class="number">197</span>)&lt;!-- more --&gt;</span><br><span class="line">	at org<span class="selector-class">.apache</span><span class="selector-class">.ibatis</span><span class="selector-class">.executor</span><span class="selector-class">.CachingExecutor</span><span class="selector-class">.createCacheKey</span>(CachingExecutor<span class="selector-class">.java</span>:<span class="number">146</span>)</span><br><span class="line">	at org<span class="selector-class">.apache</span><span class="selector-class">.ibatis</span><span class="selector-class">.executor</span><span class="selector-class">.CachingExecutor</span><span class="selector-class">.query</span>(CachingExecutor<span class="selector-class">.java</span>:<span class="number">82</span>)</span><br><span class="line">	at org<span class="selector-class">.apache</span><span class="selector-class">.ibatis</span><span class="selector-class">.session</span><span class="selector-class">.defaults</span><span class="selector-class">.DefaultSqlSession</span><span class="selector-class">.selectList</span>(DefaultSqlSession<span class="selector-class">.java</span>:<span class="number">148</span>)</span><br><span class="line">	... <span class="number">29</span> more</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="发现原因"><a href="#发现原因" class="headerlink" title="发现原因"></a>发现原因</h1><ul>
