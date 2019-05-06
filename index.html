@@ -409,7 +409,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.ideashin.com/2019/05/06/使用MyBatis查看多用户信息出现同一结果/">
+    <link itemprop="mainEntityOfPage" href="http://www.ideashin.com/2019/05/06/错误！利用MyBatis查看多用户信息出现同一结果/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shin">
@@ -429,7 +429,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/05/06/使用MyBatis查看多用户信息出现同一结果/" class="post-title-link" itemprop="url">使用MyBatis查看多用户信息出现同一结果</a>
+                <a href="/2019/05/06/错误！利用MyBatis查看多用户信息出现同一结果/" class="post-title-link" itemprop="url">使用MyBatis查看多用户信息出现同一结果</a>
               
             
           </h1>
@@ -454,7 +454,7 @@
                 
               
 
-              <time title="创建时间：2019-05-06 09:03:25 / 修改时间：09:21:18" itemprop="dateCreated datePublished" datetime="2019-05-06T09:03:25+08:00">2019-05-06</time>
+              <time title="创建时间：2019-05-06 09:03:25 / 修改时间：09:25:21" itemprop="dateCreated datePublished" datetime="2019-05-06T09:03:25+08:00">2019-05-06</time>
             
 
             
@@ -502,8 +502,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/06/使用MyBatis查看多用户信息出现同一结果/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/06/使用MyBatis查看多用户信息出现同一结果/" itemprop="commentCount"></span>
+                <a href="/2019/05/06/错误！利用MyBatis查看多用户信息出现同一结果/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/06/错误！利用MyBatis查看多用户信息出现同一结果/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -532,22 +532,16 @@
 
       
         
+          <h1 id="错误详情"><a href="#错误详情" class="headerlink" title="错误详情"></a>错误详情</h1><p>利用Mybatis变成时，出现进入多个页面查看不同用户信息返回的总是第一个用户的信息。</p>
+          <!--noindex-->
           
-            <h1 id="错误详情"><a href="#错误详情" class="headerlink" title="错误详情"></a>错误详情</h1><p>进入多个页面查看不同用户信息返回的总是第一个用户的信息</p>
-<ul>
-<li><p>错误详情</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Caused by: org<span class="selector-class">.apache</span><span class="selector-class">.ibatis</span><span class="selector-class">.executor</span><span class="selector-class">.ExecutorException</span>: Executor was closed.</span><br><span class="line">	at org<span class="selector-class">.apache</span><span class="selector-class">.ibatis</span><span class="selector-class">.executor</span><span class="selector-class">.BaseExecutor</span><span class="selector-class">.createCacheKey</span>(BaseExecutor<span class="selector-class">.java</span>:<span class="number">197</span>)&lt;!-- more --&gt;</span><br><span class="line">	at org<span class="selector-class">.apache</span><span class="selector-class">.ibatis</span><span class="selector-class">.executor</span><span class="selector-class">.CachingExecutor</span><span class="selector-class">.createCacheKey</span>(CachingExecutor<span class="selector-class">.java</span>:<span class="number">146</span>)</span><br><span class="line">	at org<span class="selector-class">.apache</span><span class="selector-class">.ibatis</span><span class="selector-class">.executor</span><span class="selector-class">.CachingExecutor</span><span class="selector-class">.query</span>(CachingExecutor<span class="selector-class">.java</span>:<span class="number">82</span>)</span><br><span class="line">	at org<span class="selector-class">.apache</span><span class="selector-class">.ibatis</span><span class="selector-class">.session</span><span class="selector-class">.defaults</span><span class="selector-class">.DefaultSqlSession</span><span class="selector-class">.selectList</span>(DefaultSqlSession<span class="selector-class">.java</span>:<span class="number">148</span>)</span><br><span class="line">	... <span class="number">29</span> more</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="发现原因"><a href="#发现原因" class="headerlink" title="发现原因"></a>发现原因</h1><ul>
-<li><p>原因：sqSession只在UserDao<strong>创建的时候才会创建一次</strong>，一旦销毁没办法再次获得</p>
-<p><img src="/2019/05/06/使用MyBatis查看多用户信息出现同一结果/1553325494592.png" alt="1553325494592"></p>
-</li>
-</ul>
-<h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>解决，只要获取sqlSession放在一个方法里面就好了</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> SqlSession sqlSession;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">private</span> SqlSession <span class="title">getSqlSession</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession();</span><br><span class="line">    <span class="keyword">return</span> sqlSession;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/05/06/错误！利用MyBatis查看多用户信息出现同一结果/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           
+          <!--/noindex-->
         
       
     </div>
@@ -664,7 +658,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-06 09:20:53" itemprop="dateModified" datetime="2019-05-06T09:20:53+08:00">2019-05-06</time>
+                <time title="修改时间：2019-05-06 09:25:31" itemprop="dateModified" datetime="2019-05-06T09:25:31+08:00">2019-05-06</time>
               
             
           </span>
@@ -737,8 +731,7 @@
 
       
         
-          <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collection，Map提供的是<strong>key到value的映射</strong></p>
-<p><strong>集合</strong>：故名思意，就是一堆东西放在一起。在Java里将任意数量的<strong>具有共同属性的对象</strong>存放在一个集合工具类。</p>
+          <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，</p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -864,7 +857,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-11 21:46:06" itemprop="dateModified" datetime="2019-04-11T21:46:06+08:00">2019-04-11</time>
+                <time title="修改时间：2019-05-06 09:26:12" itemprop="dateModified" datetime="2019-05-06T09:26:12+08:00">2019-05-06</time>
               
             
           </span>
@@ -937,15 +930,9 @@
 
       
         
-          <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><ul>
+          <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><ul>
 <li>Git是一个<strong>分散式版本控制</strong>软件。</li>
-<li>它会把你每次修改提交的内容都记录下来， 如果某一次修改出错，想回到修改之前，可以直接通过git跳到上一次提交的文件内容。</li>
-</ul>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
-<li><p>安装</p>
-<p>官网下载</p>
-</li>
-<li><p>配置用户信息</p></li></ul>
+<li>它会把你每次修改提交的内容都记录下来， 如果某一次修改出错，想回到修改之前，可以直接通过git跳到上一次提交的文件内容。</li></ul>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1071,7 +1058,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-06 09:11:39" itemprop="dateModified" datetime="2019-05-06T09:11:39+08:00">2019-05-06</time>
+                <time title="修改时间：2019-05-06 09:25:41" itemprop="dateModified" datetime="2019-05-06T09:25:41+08:00">2019-05-06</time>
               
             
           </span>
@@ -1145,9 +1132,7 @@
       
         
           <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    建立这个博客也已经三天了，写完第一个建站过程之后，一直不知道该如何下手去写。从知乎上查找“博客 怎么写”、去看别人的博客，刚开始到底怎么写呢？其实到现在我也不是特别明白。</p>
-<p>​    既然不明白，那就有什么写什么吧！自己正在学习java，建这个博客本意也是为了能提升自己做好笔记。下定决心就开始写了，先把今天学习的Spring基础写出来，以后在慢慢回顾Java以前的知识点。以下的文章，我是跟着慕课网的课程，以及看书查阅，总结而成的。</p>
-<h1 id="Spring是什么"><a href="#Spring是什么" class="headerlink" title="Spring是什么"></a>Spring是什么</h1><blockquote>
-<p><strong>Spring Framework</strong> 是一个开源的<a href="https://zh.wikipedia.org/wiki/Java" target="_blank" rel="noopener">Java</a>／<a href="https://zh.wikipedia.org/wiki/Java_EE" target="_blank" rel="noopener">Java EE</a>全功能栈（full-stack）的<a href="https://zh.wikipedia.org/wiki/%E8%BD%AF%E4%BB%B6%E6%A1%86%E6%9E%B6" target="_blank" rel="noopener">应用程序框架</a>，以<a href="https://zh.wikipedia.org/wiki/Apache_License_2.0" target="_blank" rel="noopener">Apache License 2.0</a>开源许可协议的形式发布，</p></blockquote>
+<p>​    既然不明白，那就有什么写什么吧！自己正在学习java，</p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1273,7 +1258,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-06 09:11:48" itemprop="dateModified" datetime="2019-05-06T09:11:48+08:00">2019-05-06</time>
+                <time title="修改时间：2019-05-06 09:25:58" itemprop="dateModified" datetime="2019-05-06T09:25:58+08:00">2019-05-06</time>
               
             
           </span>
@@ -1347,8 +1332,6 @@
       
         
           <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    看到别人都在写blog，拥有自己的小站，实在羡慕不已。虽然自己也在做笔记，但是总感觉自己偷偷放着不那么舒服，不如放在网上和大家一起交流共勉。因此我决心要有自己的blog。最后终于完成了自己第一个的网站，也是自己第一个blog，也是有了自己的第一个域名ideashin.com。</p>
-<p>​    建站的过程并不怎么顺利，本来Hexo+GitHub是绝配，但是我本身就有一个限制（开小飞机）的vps，一直放着也是浪费，因此决心用vps部署一个Hexo的博客。因为以前并没有接触过，所以查看了很多资料才完成的。以下就是我建站的过程，遇到的问题我都放在最后面了，如果有幸能被看到的话希望能有所帮助。</p>
-<p>​    在此写下第一篇博客，也是自己的一个开端，希望对自己有能所提升。也方便自己以后查阅，也希望能有幸帮到他人。</p>
           <!--noindex-->
           
             <div class="post-button text-center">
