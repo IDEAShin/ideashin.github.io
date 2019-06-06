@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[err]]></title>
-    <url>%2Fpost%2F125fdbbd%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
-    <title><![CDATA[sdf]]></title>
-    <url>%2Fpost%2Fcb665d5%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
     <title><![CDATA[快速了解集合体系结构以及常用方法]]></title>
     <url>%2Fpost%2Fe3f9bd95%2F</url>
     <content type="text"><![CDATA[概述本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collection，Map提供的是key到value的映射 集合：故名思意，就是一堆东西放在一起。在Java里将任意数量的具有共同属性的对象存放在一个集合工具类。 注意集合只能存放对象，存储int类型的数据“1”，也会自动转换为Integer类 Map集合是以键值对的形式存在 集合比数组更加灵活，它的数据存储没有限制，对数据的增删十分方便，试用于无法预测存储数据的数量 体系结构Collection接口 Iterable与Iterator的关系说到体系结构，大家能看到，Collection是继承中Iterable而来的，那么这又和Iterator有什么关系呢？ Iterable属于java.lang包，Ierrator以及Collection属于java.util包 Iterator也就是迭代器接口，它里面提供了迭代器的方法 在Iterable接口中，调用了Iterator类型的的iterator()方法，返回一个T类型的迭代器 Map接口 List概念 List（序列）就是一个元素有序且可重复的集合 可以自由的控制元素的增删 ArrayList12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758@Test public void testArrayList() &#123; List list = new ArrayList(); System.out.println("===========================增加"); //增加---add(E e) list.add("www"); list.add("ideashin"); list.add(".com"); list.add("shin' blog"); //输出个数 System.out.println("size="+list.size()); // 遍历输出 for (Object test:list) &#123; System.out.println(test); &#125; System.out.println("--------------增加到指定位置"); //add(int index, E element),从0开始存储,也就是add(n-1, element) list.add(3, "ideashin"); // 遍历输出 for (int i=0; i&lt;list.size();i++) &#123; System.out.println(list.get(i)); &#125;//看到输出结果可以了解到List的集合中的元素是可重复的 System.out.println("--------------指定集合增加到集合末尾"); //addAll(Collection&lt;? extends E&gt; c) List list2 = new ArrayList(); list2.add("java"); list2.add("linux"); list.addAll(list2); // 输出 System.out.println(list); System.out.println("--------------指定集合增加到集合指定位置"); //addAll(int index, Collection&lt;? extends E&gt; c) List list3 = new ArrayList(); list3.add("猪肉"); list3.add("牛肉"); list.addAll(3, list3); // 遍历输出 for (Object test:list) &#123; System.out.println(test); &#125; System.out.println("===========================删除"); //删除第2个元素,从0开始存储,也就是remove(n-1) list.remove(1);//或者 list.remove(".com"); // 输出 for (Object test:list ) &#123; System.out.println(test); &#125; System.out.println("--------------删除所有元素"); // list.removeAll(list); list.clear(); System.out.println(list); &#125;]]></content>
