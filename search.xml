@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[使用MyBatis查看多用户信息出现同一结果]]></title>
-    <url>%2Fpost%2Fbd71c1a1.html</url>
-    <content type="text"><![CDATA[错误详情利用Mybatis变成时，出现进入多个页面查看不同用户信息返回的总是第一个用户的信息。 错误详情 123456Caused by: org.apache.ibatis.executor.ExecutorException: Executor was closed. at org.apache.ibatis.executor.BaseExecutor.createCacheKey(BaseExecutor.java:197) at org.apache.ibatis.executor.CachingExecutor.createCacheKey(CachingExecutor.java:146) at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:82) at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) ... 29 more 发现原因 原因：sqSession只在UserDao创建的时候才会创建一次，一旦销毁没办法再次获得 解决办法解决，只要获取sqlSession放在一个方法里面就好了 123456private SqlSession sqlSession; private SqlSession getSqlSession() &#123; sqlSession = SqlSessionFactoryUtils.getSqlSessionFactory().openSession(); return sqlSession;&#125;]]></content>
-      <categories>
-        <category>Java</category>
-        <category>问题解决</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>MyBatis</tag>
-        <tag>error</tag>
-      </tags>
+    <title><![CDATA[err]]></title>
+    <url>%2Fpost%2F125fdbbd%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[sdf]]></title>
+    <url>%2Fpost%2Fcb665d5%2F</url>
+    <content type="text"></content>
   </entry>
   <entry>
     <title><![CDATA[快速了解集合体系结构以及常用方法]]></title>
-    <url>%2Fpost%2Fe3f9bd95.html</url>
+    <url>%2Fpost%2Fe3f9bd95%2F</url>
     <content type="text"><![CDATA[概述本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collection，Map提供的是key到value的映射 集合：故名思意，就是一堆东西放在一起。在Java里将任意数量的具有共同属性的对象存放在一个集合工具类。 注意集合只能存放对象，存储int类型的数据“1”，也会自动转换为Integer类 Map集合是以键值对的形式存在 集合比数组更加灵活，它的数据存储没有限制，对数据的增删十分方便，试用于无法预测存储数据的数量 体系结构Collection接口 Iterable与Iterator的关系说到体系结构，大家能看到，Collection是继承中Iterable而来的，那么这又和Iterator有什么关系呢？ Iterable属于java.lang包，Ierrator以及Collection属于java.util包 Iterator也就是迭代器接口，它里面提供了迭代器的方法 在Iterable接口中，调用了Iterator类型的的iterator()方法，返回一个T类型的迭代器 Map接口 List概念 List（序列）就是一个元素有序且可重复的集合 可以自由的控制元素的增删 ArrayList12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758@Test public void testArrayList() &#123; List list = new ArrayList(); System.out.println("===========================增加"); //增加---add(E e) list.add("www"); list.add("ideashin"); list.add(".com"); list.add("shin' blog"); //输出个数 System.out.println("size="+list.size()); // 遍历输出 for (Object test:list) &#123; System.out.println(test); &#125; System.out.println("--------------增加到指定位置"); //add(int index, E element),从0开始存储,也就是add(n-1, element) list.add(3, "ideashin"); // 遍历输出 for (int i=0; i&lt;list.size();i++) &#123; System.out.println(list.get(i)); &#125;//看到输出结果可以了解到List的集合中的元素是可重复的 System.out.println("--------------指定集合增加到集合末尾"); //addAll(Collection&lt;? extends E&gt; c) List list2 = new ArrayList(); list2.add("java"); list2.add("linux"); list.addAll(list2); // 输出 System.out.println(list); System.out.println("--------------指定集合增加到集合指定位置"); //addAll(int index, Collection&lt;? extends E&gt; c) List list3 = new ArrayList(); list3.add("猪肉"); list3.add("牛肉"); list.addAll(3, list3); // 遍历输出 for (Object test:list) &#123; System.out.println(test); &#125; System.out.println("===========================删除"); //删除第2个元素,从0开始存储,也就是remove(n-1) list.remove(1);//或者 list.remove(".com"); // 输出 for (Object test:list ) &#123; System.out.println(test); &#125; System.out.println("--------------删除所有元素"); // list.removeAll(list); list.clear(); System.out.println(list); &#125;]]></content>
       <categories>
         <category>Java</category>
@@ -29,7 +25,7 @@
   </entry>
   <entry>
     <title><![CDATA[Git基础命令操作入门]]></title>
-    <url>%2Fpost%2F97e08cdd.html</url>
+    <url>%2Fpost%2F97e08cdd%2F</url>
     <content type="text"><![CDATA[概述 Git是一个分散式版本控制软件。 它会把你每次修改提交的内容都记录下来， 如果某一次修改出错，想回到修改之前，可以直接通过git跳到上一次提交的文件内容。 安装 安装 官网下载 配置用户信息 12$ git config --global user.name "shin"$ git config --global user.email "ideashin@gmail.com" 仓库创建及工作流仓库创建 初始化版本库 1$ git init 添加文件到版本库 12$ git add [文件名]$ git commit [-m "输入每次修改提交的信息"] 查看仓库状态 12$ git status#提示clean就是全部提交，是干净的 扩展 1234$ pwd #当前目录$ ll #目录下的文件$ echo "git哈哈" &gt;&gt; text.txt #创建text.txt，并且把当前输出的“git哈哈”输出到text.txt$ cat text.txt #展现当前文件内容 工作流 123456789$ git reset HEAD text.txt #暂存区重写，就是将仓库得到最后一个版本替换暂存区$ git checkout text.txt #工作区变干净，清除未提交的数据$ git checkout HEAD &lt;file&gt; #仓库的文件替换暂存区和工作区#回滚$ git log #拿到需要回滚到的commit码$ git reset --hard commit码 #仓库和暂存区都回滚$ git rm --cached #清空暂存区$ git rm text.txt #清除本地文件，在次add commit才能将仓库清空 主要功能远程仓库 创建SSH key 1234#创建公钥$ ssh-keygen -t rsa -C "邮箱地址"#然后获取复制公钥$ cat ~/.ssh/id_rsa.pub 进入Github，点击头像——setting——SSH and GPG keys，点击new ssh key 在本地git中输入测试 1$ ssh -T git@github.com 123456$ echo "# shin_test" &gt;&gt; README.md$ git init$ git add README.md$ git commit -m "first commit"$ git remote add origin https://github.com/ideashin/shin_test.git$ git push -u origin master 创新一个新仓库 123456$ echo "# shin_test" &gt;&gt; README.md$ git init$ git add README.md$ git commit -m "first commit"$ git remote add origin https://github.com/ideashin/shin_test.git$ git push -u origin master 克隆仓库1$ git clone git@github.com:xxx/xx.git 标签管理通过标签回滚版本 123456789$ git tag #查看所有标签$ git tag name #创建标签$ git tag -a name -m "content" #指定提交信息$ git tag -d name #删除标签$ git push origin name #标签发布 分支管理 如图，分支的用途就是，当你在brand时要和别人合作开发项目，但是又需要一定的时间，为了不影响主分支master，令新建一个feature分支，开发完成后，在到merge合并分支 1234567891011121314#创建分支：$ git branch +分支名#查看所有分支：$ git branch #*号代表当前所在分支#切换分支：$ git checkout 分支名 #切换到指定分支#合并到master分支：$ git merge 分支名 #首先切换到master分支，然后merge合并。#删除分支：$ git branch -d 分支名]]></content>
       <categories>
         <category>实用技术</category>
@@ -41,7 +37,7 @@
   </entry>
   <entry>
     <title><![CDATA[Spring-基础入门]]></title>
-    <url>%2Fpost%2Fbe6e8921.html</url>
+    <url>%2Fpost%2Fbe6e8921%2F</url>
     <content type="text"><![CDATA[前言​ 建立这个博客也已经三天了，写完第一个建站过程之后，一直不知道该如何下手去写。从知乎上查找“博客 怎么写”、去看别人的博客，刚开始到底怎么写呢？其实到现在我也不是特别明白。 ​ 既然不明白，那就有什么写什么吧！自己正在学习java，建这个博客本意也是为了能提升自己做好笔记。下定决心就开始写了，先把今天学习的Spring基础写出来，以后在慢慢回顾Java以前的知识点。以下的文章，我是跟着慕课网的课程，以及看书查阅，总结而成的。 Spring是什么 Spring Framework 是一个开源的Java／Java EE全功能栈（full-stack）的应用程序框架，以Apache License 2.0开源许可协议的形式发布，也有.NET平台上的移植版本。该框架基于 Expert One-on-One Java EE Design and Development（ISBN 0-7645-4385-7）一书中的代码，最初由Rod Johnson和Juergen Hoeller等开发。Spring Framework提供了一个简易的开发方式，这种开发方式，将避免那些可能致使底层代码变得繁杂混乱的大量的属性文件和帮助类。 ——wiki 简单来说 Spring是一个开源的Java/JavaEE全功能框架。也就是说可能贯穿整个开发过程，有全套的解决方案。 它是为了简写代码而生的，可以有效的使复杂的代码变得简单，方便了程序开发。 Spring有什么优点 方便解耦，简单开发 Spring就是一个大工厂，可以将所有对象创建和依赖关系的维护交给Spring管理，这样极大降低了耦合性，是开发过程变得简单。 AOP编程的支持 AOP就是面向切面编程，可以在不修改源代码的情况下仅程序动态统一的添加功能，可以对业务逻辑的各部分进行分离，从而提高的程序的复用性，降低了耦合 声明式事务的支持 只需要通过配置就可以完成对事务的管理，而无需手动编程 方便程序的测试 Spring对Junit4支持，可以通过注解方面的测试Spring程序 方便继承各种优秀框架 Spring不排斥各种优秀的开源框架，其内部提供了对各种优秀框架的直接支持 降低JavaEE API的使用难度 Spring对JavaEE开发中非常难用的一些API，都提供了封装，使这些API的使用难度大大降低 高度开放性 不强制使用框架，可以根据需求使用框架的部分或全部 Spring模块 Core Container Spring的核心容器，是Spring框架的基础，作用是责管理对象的创建，管理，配置等等的操作。 AOP和Aspects 面向切面编程的能力，上面优点里已经说明，在做里不做介绍 Instrumentation/Messaging 提供了为JVM添加代理的功能。几乎不用。 Web 支持web开发， 包含了4个web组件 Date Access/Integrating 持久层，简化了数据访问的操作，同时提供了ORM框架的能力，可以对流行的ORM框架进行整合]]></content>
       <categories>
         <category>Java</category>
@@ -54,7 +50,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hexo搭建个人博客并部署到Vps服务器]]></title>
-    <url>%2Fpost%2F6c0c97eb.html</url>
+    <url>%2Fpost%2F6c0c97eb%2F</url>
     <content type="text"><![CDATA[前言​ 看到别人都在写blog，拥有自己的小站，实在羡慕不已。虽然自己也在做笔记，但是总感觉自己偷偷放着不那么舒服，不如放在网上和大家一起交流共勉。因此我决心要有自己的blog。最后终于完成了自己第一个的网站，也是自己第一个blog，也是有了自己的第一个域名ideashin.com。 ​ 建站的过程并不怎么顺利，本来Hexo+GitHub是绝配，但是我本身就有一个限制（开小飞机）的vps，一直放着也是浪费，因此决心用vps部署一个Hexo的博客。因为以前并没有接触过，所以查看了很多资料才完成的。以下就是我建站的过程，遇到的问题我都放在最后面了，如果有幸能被看到的话希望能有所帮助。 ​ 在此写下第一篇博客，也是自己的一个开端，希望对自己有能所提升。也方便自己以后查阅，也希望能有幸帮到他人。 本地安装环境配置安装hexo需要在本机安装Git以及Node.js Git 从官网下载安装好后https://git-scm.com/ 使用 git -version’可以查看安装的版本 配置用户信息，设置用户名以及邮箱 1234$ git config --global user.name "用户名"$ git config --global user.email "邮箱地址"#查看是否成功$ git config --list 重要 获取key，后面配置SSH要用到 在Git Bash中执行 1234#创建公钥$ ssh-keygen -t rsa -C "邮箱地址"#然后获取复制公钥备用$ cat ~/.ssh/id_rsa.pub Node.js 官网下载安装https://nodejs.org 输入node -version查看安装版本 Hexo配置具体可以参照官方文档，有中文版就介绍也很详细，这里只简单配置 https://hexo.io/zh-cn/docs/ 安装参照官方文档，使用下列代码安装 1$ npm install -g hexo-cli 建站在你想存放hexo的地方新建一个文件夹，如Hexo，然后在文件夹内右键启动git的git bash，执行如下代码 12$ hexo init$ npm install 注意： 不要用git init，这样会把整个hexo文件都同步到服务器，应该是hexo init 测试1$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo server 执行后可以输入网址本地查看http://localhost:4000 Server操作确保您的系统和apt包首先，通过运行以下命令确保您的系统和apt包列表完全更新： 12$ apt-get update -y$ apt-get upgrade -y 安装git、sudo、nginx123456$ apt install git#debian默认无sodu$ apt-get install sudo$ apt-get install nginx 检查版本确保安装 123$ git --version$ nginx -V 配置nginx123456#切换目录$ cd /etc/nginx/sites-available#备份默认配置$ cp default default.bak #修改配置$ vim default 123456789#检查是否有错误$ nginx -t #保存退出后，启动$ nginx：systemctl start nginx#设置开机自动启动$ systemctl enable nginx#查看运行状态$ systemctl status nginx#显示running表示成功运行 创建git用户创建1$ adduser git 赋予sudo权限12$ chmod 740 /etc/sudoers$ vim /etc/sudoers 然后修改在root下面添加 1git ALL=(ALL) ALL 改回权限 1$ chmod 400 /etc/sudoers 配置SSH切换git用户，并到git用户目录12345#切换到git用户$ su git#转到git用户目录$ cd /home/git 配置ssh1234567891011# 创建.ssh文件夹$ mkdir ~/.ssh#输入可查看是否创建$ ls -a# 创建authorized_keys文件并编辑$ vim ~/.ssh/authorized_keys# 如果你还没有生成公钥，那么首先在本地电脑中执行 cat ~/.ssh/id_rsa.pub | pbcopy生成公钥# 再将公钥复制粘贴到authorized_keys# 保存关闭authorized_keys后，修改相应权限$ chmod 600 ~/.ssh/authorized_keys$ chmod 700 ~/.ssh 然后输入测试是否可以登录（免密？） 1$ ssh -v git@68.168.141.184 默认22端口，不是则需要在后面加上-p 端口号 WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!是以前配置过主机，需要进行删除 1$ vi ~/.ssh/known_hosts 创建git裸库 创建裸库 1234# 回到git目录$ cd /home/git# 使用git用户创建git裸仓库，以blog.git为例$ git init --bare blog.git 根据前面配置的nginx中的根目录 1234#切换目录$ cd /var/www/ #创建网站目录，以blog为例$ mkdir blog 检查用户权限检查一下之前的blog.git、.ssh、blog目录的用户组权限是否都为git:git 12$ ls -l /var/www/$ ls -l /homw/git/ 如果不是则 12$ sudo chown git:git -R /var/www/blog$ sudo chown git:git -R /home/git/blog.git 使用git-hooks同步网站根目录使用一个钩子文件：post-receive，每当git仓库接收到内容的时候，就会自动调用这个钩子，把内容同步到网站根目录。 git用户下执行 1234#切换到hooks目录下$ cd /home/git/blog.git/hooks#创建文件$ vim post-receive 添加如下 12345678#!/bin/bashGIT_REPO=/home/git/blog.gitTMP_GIT_CLONE=/home/git/tmp/hexo_tmp #在这个文件夹下随便创建文件，不然出错PUBLIC_WWW=/var/www/blog #在这个文件夹下随便创建文件，不然出错rm -rf $&#123;TMP_GIT_CLONE&#125;git clone $GIT_REPO $TMP_GIT_CLONErm -rf $&#123;PUBLIC_WWW&#125;/*cp -rf $&#123;TMP_GIT_CLONE&#125;/* $&#123;PUBLIC_WWW&#125; 保存后，执行以下赋予权限 1$ chmod +x post-receive 关闭git用户的shell权限12#执行$ vim /etc/paswd 将最后一行 123git:x:1000:1000::/home/git:/bin/bash#改为git:x:1000:1000::/home/git:/usr/bin/git-shell 本地操作配置本地Hexo的_config.yml1234deploy: type: git repo: git@你的服务器IP:/home/git/blog.git branch: master 同步到服务器12#清理、生成、部署$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d 到现在已经全部完成了，可以自己进行一些配置进一步完善 问题总结服务器使用sodu命令时无法使用 原因 debian默认sodu 解决 执行如下 1$ apt-get install sudo systemctl: command not found 原因 系统版本旧就会没有systemctl命令 解决 使用service命令 1$ sudo service &#123;servicename&#125; &#123;stop|start|restart&#125; fatal: Not a git repository (or any of the parent directories): .git 原因 提示说没有.git这样一个目录 解决 git init就好了 WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! 原因 本机git连接过服务器地址，但是服务器重装了，需要进行删除 解决 输入以下命令，删除文件中要连接的服务器 1$ vi /Users/wangdong/.ssh/known_hosts repository ‘xxxxxxxxx’does not exist 原因 如果要删除这个目录下的文件，这个目录下必须有文件，不然删除就是无意义的 解决 提前在该目录下新建一些文件 在clone一些git项目的时候，有些可能时间太久远，下载失败 解决 将git clone http:改为git clone git:]]></content>
       <categories>
         <category>实用技术</category>
