@@ -99,7 +99,7 @@
   <meta name="description" content="概述本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collection，Map提供的是key到value的映射 集合：故名思意，就是一堆东西放在一起。在Java里将任意数量的具有共同属性的对象存放在一个集合工具类。">
 <meta name="keywords" content="Java,集合">
 <meta property="og:type" content="article">
-<meta property="og:title" content="快速了解集合体系结构以及常用方法">
+<meta property="og:title" content="集合体系结构以及常用方法总结">
 <meta property="og:url" content="http://www.ideashin.com/post/e3f9bd95/index.html">
 <meta property="og:site_name" content="IDEAShin">
 <meta property="og:description" content="概述本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collection，Map提供的是key到value的映射 集合：故名思意，就是一堆东西放在一起。在Java里将任意数量的具有共同属性的对象存放在一个集合工具类。">
@@ -108,9 +108,9 @@
 <meta property="og:image" content="http://www.ideashin.com/post/e3f9bd95/1554988772207.png">
 <meta property="og:image" content="http://www.ideashin.com/post/e3f9bd95/1554988606489.png">
 <meta property="og:image" content="http://www.ideashin.com/post/e3f9bd95/1554989460626.png">
-<meta property="og:updated_time" content="2019-06-06T11:22:53.457Z">
+<meta property="og:updated_time" content="2019-06-06T16:37:32.347Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="快速了解集合体系结构以及常用方法">
+<meta name="twitter:title" content="集合体系结构以及常用方法总结">
 <meta name="twitter:description" content="概述本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collection，Map提供的是key到value的映射 集合：故名思意，就是一堆东西放在一起。在Java里将任意数量的具有共同属性的对象存放在一个集合工具类。">
 <meta name="twitter:image" content="http://www.ideashin.com/post/e3f9bd95/1554989428619.png">
 
@@ -130,7 +130,7 @@
   };
 </script>
 
-  <title>快速了解集合体系结构以及常用方法 | IDEAShin</title>
+  <title>集合体系结构以及常用方法总结 | IDEAShin</title>
   
 
 
@@ -270,7 +270,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">5</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">7</span></a>
 
   </li>
         
@@ -289,7 +289,7 @@
       
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">5</span></a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">7</span></a>
 
   </li>
         
@@ -308,7 +308,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">4</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">6</span></a>
 
   </li>
         
@@ -432,7 +432,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">快速了解集合体系结构以及常用方法
+          <h1 class="post-title" itemprop="name headline">集合体系结构以及常用方法总结
 
               
             
@@ -475,7 +475,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-06 19:22:53" itemprop="dateModified" datetime="2019-06-06T19:22:53+08:00">2019-06-06</time>
+                <time title="修改时间：2019-06-07 00:37:32" itemprop="dateModified" datetime="2019-06-07T00:37:32+08:00">2019-06-07</time>
               
             
           </span>
@@ -615,7 +615,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://www.ideashin.com/post/e3f9bd95/" title="快速了解集合体系结构以及常用方法">http://www.ideashin.com/post/e3f9bd95/</a>
+    <a href="http://www.ideashin.com/post/e3f9bd95/" title="集合体系结构以及常用方法总结">http://www.ideashin.com/post/e3f9bd95/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -652,6 +652,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/post/bd71c1a1/" rel="prev" title="使用MyBatis查看多用户信息出现同一结果">
+                使用MyBatis查看多用户信息出现同一结果 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -729,7 +733,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -756,7 +760,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -783,7 +791,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1048,7 +1060,7 @@
   var disqus_config = function() {
     this.page.url = "http://www.ideashin.com/post/e3f9bd95/";
     this.page.identifier = "post/e3f9bd95/";
-    this.page.title = '快速了解集合体系结构以及常用方法';
+    this.page.title = '集合体系结构以及常用方法总结';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
