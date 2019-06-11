@@ -96,20 +96,20 @@
 
 
 
-  <meta name="description" content="问题在写jsp页面的时候，利用maven引入了jstl标签，却一直不能用。打开之后的页面是这样的。  百思不得其解，以前没遇到这样的问题啊。 检查了代码发现并没有错误，servlet加了log也能正常输出。 解决在jsp中添加以下语句即可 1&amp;lt;%@ page isELIgnored=&quot;false&quot; %&amp;gt; isELIgnored属性用来指定是否忽略。格式为： ＜%@ page isELI">
+  <meta name="description" content="问题在写jsp页面的时候，利用maven引入了jstl标签，却一直不能用。打开之后的页面是这样的。">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jstl无法正常使用的原因及解决">
 <meta property="og:url" content="http://www.ideashin.com/post/1f6db128/index.html">
 <meta property="og:site_name" content="IDEAShin">
-<meta property="og:description" content="问题在写jsp页面的时候，利用maven引入了jstl标签，却一直不能用。打开之后的页面是这样的。  百思不得其解，以前没遇到这样的问题啊。 检查了代码发现并没有错误，servlet加了log也能正常输出。 解决在jsp中添加以下语句即可 1&amp;lt;%@ page isELIgnored=&quot;false&quot; %&amp;gt; isELIgnored属性用来指定是否忽略。格式为： ＜%@ page isELI">
+<meta property="og:description" content="问题在写jsp页面的时候，利用maven引入了jstl标签，却一直不能用。打开之后的页面是这样的。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://www.ideashin.com/post/1f6db128/1560252978624.png">
 <meta property="og:image" content="http://www.ideashin.com/post/1f6db128/1560254442616.png">
-<meta property="og:updated_time" content="2019-06-11T12:03:37.311Z">
+<meta property="og:updated_time" content="2019-06-11T13:05:33.869Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jstl无法正常使用的原因及解决">
-<meta name="twitter:description" content="问题在写jsp页面的时候，利用maven引入了jstl标签，却一直不能用。打开之后的页面是这样的。  百思不得其解，以前没遇到这样的问题啊。 检查了代码发现并没有错误，servlet加了log也能正常输出。 解决在jsp中添加以下语句即可 1&amp;lt;%@ page isELIgnored=&quot;false&quot; %&amp;gt; isELIgnored属性用来指定是否忽略。格式为： ＜%@ page isELI">
+<meta name="twitter:description" content="问题在写jsp页面的时候，利用maven引入了jstl标签，却一直不能用。打开之后的页面是这样的。">
 <meta name="twitter:image" content="http://www.ideashin.com/post/1f6db128/1560252978624.png">
 
 
@@ -456,7 +456,7 @@
                 
               
 
-              <time title="创建时间：2019-06-11 19:28:35 / 修改时间：20:03:37" itemprop="dateCreated datePublished" datetime="2019-06-11T19:28:35+08:00">2019-06-11</time>
+              <time title="创建时间：2019-06-11 19:28:35 / 修改时间：21:05:33" itemprop="dateCreated datePublished" datetime="2019-06-11T19:28:35+08:00">2019-06-11</time>
             
 
             
@@ -540,10 +540,10 @@
       
 
       
-        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>在写jsp页面的时候，利用maven引入了jstl标签，却一直不能用。打开之后的页面是这样的。</p>
+        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>在写jsp页面的时候，利用maven引入了jstl标签，却一直不能用。打开之后的页面是这样的。<a id="more"></a></p>
 <p><img src="/post/1f6db128/1560252978624.png" alt="1560252978624"></p>
 <p>百思不得其解，以前没遇到这样的问题啊。</p>
-<p>检查了代码发现并没有错误，servlet加了log也能正常输出。</p>
+<p>检查了后台代码发现并没有错误，servlet加了log也能正常输出。</p>
 <h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>在jsp中添加以下语句即可</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">page</span> <span class="attr">isELIgnored</span>=<span class="string">"false"</span> %&gt;</span></span><br></pre></td></tr></table></figure>
 <p><strong>isELIgnored属性用来指定是否忽略。</strong>格式为：</p>
