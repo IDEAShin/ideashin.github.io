@@ -454,7 +454,7 @@
                 
               
 
-              <time title="创建时间：2019-07-04 20:44:36 / 修改时间：21:14:58" itemprop="dateCreated datePublished" datetime="2019-07-04T20:44:36+08:00">2019-07-04</time>
+              <time title="创建时间：2019-07-04 20:44:36 / 修改时间：21:18:20" itemprop="dateCreated datePublished" datetime="2019-07-04T20:44:36+08:00">2019-07-04</time>
             
 
             
@@ -532,29 +532,17 @@
 
       
         
-          
-            <h1 id="问题说明"><a href="#问题说明" class="headerlink" title="问题说明"></a>问题说明</h1><p>前几日练习项目的时候，因为老师要求，前台的性别男女需要直接存入数据库中。结果，数据库中定义的类型为<code>char(1)</code>，明明是一个字节确实很困惑。</p>
+          <h1 id="问题说明"><a href="#问题说明" class="headerlink" title="问题说明"></a>问题说明</h1><p>前几日练习项目的时候，因为老师要求，前台的性别男女需要直接存入数据库中。结果，数据库中定义的类型为<code>char(1)</code>，明明是一个字节确实很困惑。</p>
 <p>可以看到数据库定义的长度为1</p>
-<p><img src="/post/226cfbee/2019-07-04-mysql数据库CHAR-1-既可以输入数字字母又可以输入汉字问题/1562244715624.png" alt="1562244715624"></p>
-<ul>
-<li><p>当输入是”1”的时候</p>
-<p><img src="/post/226cfbee/2019-07-04-mysql数据库CHAR-1-既可以输入数字字母又可以输入汉字问题/1562245076326.png" alt="1562245076326"></p>
-</li>
-<li><p>输入性别为”男”，同样也是成功的</p>
-<p><img src="/post/226cfbee/2019-07-04-mysql数据库CHAR-1-既可以输入数字字母又可以输入汉字问题/1562245281792.png" alt="1562245281792"></p>
-</li>
-</ul>
-<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>首先，我猜测这里的<code>char(1)</code>中的<code>1</code>并不是字节数，而是有多少个个数。经过我的测试<strong>无论是输入中文、英文、数字、或是字符都是可以的，但是都是只能输入一个。就算是数字，也只能输入一个。</strong></p>
-<p>所以尽管一个字符可能是多个字节的，但是仍然可以输入一个。也就是说<code>1</code>代表的是个数，而非字节。</p>
-<p>后来在官网的资料上面查到这样的说法</p>
-<blockquote>
-<p>The <code>CHAR</code> and <code>VARCHAR</code> types are declared with a length that indicates the maximum number of characters you want to store. For example, <code>CHAR(30)</code> can hold up to 30 characters.</p>
-<p> <a href="https://dev.mysql.com/doc/refman/5.7/en/char.html" target="_blank" rel="noopener">The CHAR and VARCHAR Types ——mysql</a></p>
-</blockquote>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>可以通过添加check约束语句</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> employee <span class="keyword">add</span> <span class="keyword">constraint</span> chk_employee_001 <span class="keyword">check</span>(empsex <span class="keyword">in</span>(<span class="number">0</span>,<span class="number">1</span>));</span><br></pre></td></tr></table></figure>
-
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/post/226cfbee/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
