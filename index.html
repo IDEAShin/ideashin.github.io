@@ -264,7 +264,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">11</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">13</span></a>
 
   </li>
         
@@ -302,7 +302,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">10</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">11</span></a>
 
   </li>
         
@@ -393,6 +393,215 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.ideashin.com/post/70d99e61/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shin">
+      <meta itemprop="description" content="Always believe that something wonderful is about to happen.">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IDEAShin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/post/70d99e61/" class="post-title-link" itemprop="url">跨域问题access-control-allow-origin</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-10-01 20:44:42 / 修改时间：20:47:29" itemprop="dateCreated datePublished" datetime="2019-10-01T20:44:42+08:00">2019-10-01</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/问题解决/" itemprop="url" rel="index"><span itemprop="name">问题解决</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/post/70d99e61/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="post/70d99e61/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="１、什么是跨域"><a href="#１、什么是跨域" class="headerlink" title="１、什么是跨域"></a>１、什么是跨域</h1><p>要了解跨域，首先要知道浏览器的<strong>同源策略</strong>，即页面的协议、域名、端口都要相同。 <strong>跨域就是指从一个域名去请求另一个域名的资源</strong>，跨域时浏览器不能执行其他网站的脚本，它的产生便是没有满足同源策略造成的，它是浏览器的一种保护机制。 <strong>跨域并不是请求发不出去，请求能发出去，服务端能收到请求并正常返回结果，只是结果被浏览器拦截了</strong></p>
+<h1 id="2、问题分析"><a href="#2、问题分析" class="headerlink" title="2、问题分析"></a>2、问题分析</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Access to XMLHttpRequest at <span class="string">'xxx.xxx.xxx.xx1'</span> from orgin <span class="string">'xxx.xxx.xxx.xx2'</span> has been blocked by CORS policy: Response to preflign request doesn<span class="string">'t pass access control check: No '</span>Access-Control-Allow-Origin<span class="string">' header is presenton the requested resource</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>跨域造成的，一个域名去请求另一个域名的资源</li>
+<li>浏览器的保护机制，没有收到来自服务器的响应头信息 要解决问题要么消除浏览器的保护机制，要么去解决跨域问题，浏览器的保护机制只能解燃眉之需，不可能让所有人都去接触。因此要在跨域问题着手。错误中提到CORS，那么什么是CORS，如何通过CORS解决跨域问题。</li>
+</ul>
+<h1 id="3、跨域资源共享CORS"><a href="#3、跨域资源共享CORS" class="headerlink" title="3、跨域资源共享CORS"></a>3、跨域资源共享CORS</h1><blockquote>
+<p><strong>跨域资源共享CORS</strong> 是一种机制，它使用额外的 HTTP 头来告诉浏览器  让运行在一个 origin (domain) 上的Web应用被准许访问来自不同源服务器上的指定的资源。当一个资源从与该资源本身所在的服务器<strong>不同的域、协议或端口</strong>请求一个资源时，资源会发起一个<strong>跨域 HTTP 请求</strong> </p>
+</blockquote>
+<p> <img src="/post/70d99e61/2019-10-01-跨域问题access-control-allow-origin/simple_req.png" alt><br> 来源：<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="noopener">HTTP访问控制（CORS）</a><br> 如上图，即上面问题分析中server需要返回一个Access-Control-Allow-Origin响应头信息 </p>
+<h1 id="4、CORS解决方案"><a href="#4、CORS解决方案" class="headerlink" title="4、CORS解决方案"></a>4、CORS解决方案</h1><p> CORS响应头信息Access-Control-Allow-Origin的作用，即允许服务器声明哪些源通过浏览器有权限访问哪些资源。因此需要在服务器中设置返回请求头 ### 添加响应头 错误是因为没有Access-Control-Allow-Origin响应头信息造成的，只需要在response中添加即可 </p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">response.setHeader(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"*"</span>);<span class="comment">//通常只需要这一个</span></span><br><span class="line">response.addHeader(<span class="string">"Access-Control-Allow-Methods"</span>, <span class="string">"GET, POST, PUT, DELETE"</span>);</span><br><span class="line">response.addHeader(<span class="string">"Access-Control-Allow-Headers"</span>, <span class="string">"Content-Type"</span>);</span><br><span class="line">response.addHeader(<span class="string">"Access-Control-Max-Age"</span>, <span class="string">"1800"</span>);<span class="comment">//30 min</span></span><br></pre></td></tr></table></figure>
+<h2 id="使用过滤器"><a href="#使用过滤器" class="headerlink" title="使用过滤器"></a>使用过滤器</h2><p> 也是添加请求头，只是在过滤器中实现了 </p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest req, ServletResponse res, FilterChain chain)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123; </span><br><span class="line">   HttpServletResponse response = (HttpServletResponse)  res;</span><br><span class="line">   response.setHeader(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"*"</span>);<span class="comment">//通常只需要这一个 </span></span><br><span class="line">   response.addHeader(<span class="string">"Access-Control-Allow-Methods"</span>, <span class="string">"GET, POST, PUT, DELETE"</span>);</span><br><span class="line">   response.addHeader(<span class="string">"Access-Control-Allow-Headers"</span>, <span class="string">"Content-Type"</span>);</span><br><span class="line">   response.addHeader(<span class="string">"Access-Control-Max-Age"</span>, <span class="string">"1800"</span>);<span class="comment">//30 min chain.doFilter(req, response);&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="注解方式（SpringBoot）"><a href="#注解方式（SpringBoot）" class="headerlink" title="注解方式（SpringBoot）"></a>注解方式（SpringBoot）</h2><p> 只需要在get方法中添加<code>@CrossOrigin(origins = &quot;*&quot;)</code> </p>
+<h1 id="5、其他解决方案"><a href="#5、其他解决方案" class="headerlink" title="5、其他解决方案"></a>5、其他解决方案</h1><ul>
+<li>jsonp</li>
+<li>postMessage</li>
+<li>webSocket</li>
+<li>Node中间代理（两次跨域）</li>
+<li>nginx反向代理</li>
+<li>window.name + iframe</li>
+<li>location.hash + iframe</li>
+<li>document.domain + iframe<br>具体查看：<a href="https://juejin.im/post/5c23993de51d457b8c1f4ee1#heading-11" target="_blank" rel="noopener">九种跨域方式实现原理</a> </li>
+</ul>
+<h1 id="6、附加：-CrossOrigin没有返回响应头的问题"><a href="#6、附加：-CrossOrigin没有返回响应头的问题" class="headerlink" title="6、附加：@CrossOrigin没有返回响应头的问题"></a>6、附加：@CrossOrigin没有返回响应头的问题</h1><p>使用Postman测试发现@CrossOrigin并没有响应头返回，使用response却有，而使用浏览器跨域访问都会返回请求头。初步猜测是注解的实现，加入了跨域请求的验证。<br>加入注解后spring在记录mapper映射时会记录对应跨域请求映射，获取handler时会判断这个请求是否是一个跨域请求，如果是，则会返回一个可以处理跨域的handler </p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//AbstractHandlerMapping#getHandlerHandler</span></span><br><span class="line"></span><br><span class="line"> ExecutionChain executionChain = getHandlerExecutionChain(handler, request);</span><br><span class="line"> <span class="comment">//如果是一个跨域请求</span></span><br><span class="line"> <span class="keyword">if</span> (CorsUtils.isCorsRequest(request)) &#123;      </span><br><span class="line">    <span class="comment">//拿到跨域的全局配置</span></span><br><span class="line">     CorsConfiguration globalConfig =           <span class="keyword">this</span>.globalCorsConfigSource.getCorsConfiguration(request);</span><br><span class="line"> <span class="comment">//拿到hander的跨域配置</span></span><br><span class="line">    CorsConfiguration handlerConfig = getCorsConfiguration(handler, request);</span><br><span class="line">    CorsConfiguration config = (globalConfig != <span class="keyword">null</span> ? globalConfig.combine(handlerConfig) : handlerConfig);           </span><br><span class="line">     <span class="comment">//处理跨域（即往响应头添加Access-Control-Allow-Origin信息等），并返回对应的handler对象</span></span><br><span class="line">    executionChain = getCorsHandlerExecutionChain(request, executionChain, config);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 判断是否是跨域请求<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isCorsRequest</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//判定请求头是否有Origin 属性即可</span></span><br><span class="line">    <span class="keyword">return</span> (request.getHeader(HttpHeaders.ORIGIN) != <span class="keyword">null</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p> 参考来源：<a href="https://my.oschina.net/u/3574106/blog/3022246" target="_blank" rel="noopener">Spring @CrossOrigin 注解原理 </a>   </p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -2176,208 +2385,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.ideashin.com/post/6c0c97eb/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shin">
-      <meta itemprop="description" content="Always believe that something wonderful is about to happen.">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="IDEAShin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/post/6c0c97eb/" class="post-title-link" itemprop="url">Hexo搭建个人博客并部署到Vps服务器</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-07 15:50:03" itemprop="dateCreated datePublished" datetime="2019-04-07T15:50:03+08:00">2019-04-07</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-06-06 18:54:16" itemprop="dateModified" datetime="2019-06-06T18:54:16+08:00">2019-06-06</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/实用技术/" itemprop="url" rel="index"><span itemprop="name">实用技术</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/实用技术/博客搭建/" itemprop="url" rel="index"><span itemprop="name">博客搭建</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/post/6c0c97eb/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="post/6c0c97eb/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    看到别人都在写blog，拥有自己的小站，实在羡慕不已。虽然自己也在做笔记，但是总感觉自己偷偷放着不那么舒服，不如放在网上和大家一起交流共勉。因此我决心要有自己的blog。最后终于完成了自己第一个的网站，也是自己第一个blog，也是有了自己的第一个域名ideashin.com。</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/post/6c0c97eb/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
 
 
           </div>
@@ -2419,7 +2433,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2489,7 +2503,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
