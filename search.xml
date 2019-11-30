@@ -15,6 +15,20 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Java可以多继承吗？]]></title>
+    <url>%2Fpost%2Fdbe3e833%2F</url>
+    <content type="text"><![CDATA[在我们拿起java课本学习的时候，想必首先要了解的就是“Java类可以继承，但是不能多继承”。这也是喝C]]></content>
+      <categories>
+        <category>Java</category>
+        <category>基础知识</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>interface</tag>
+        <tag>class</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[mybatis绑定错误的解决方案 org.apache.ibatis.binding.BindingException]]></title>
     <url>%2Fpost%2F3076de19%2F</url>
     <content type="text"><![CDATA[最近再进行一个oa系统核心模块开发，使用的SSM框架。在运行的时候，遇到了mybaits无法绑定的问题 问题解决问题提示是 1org.apache.ibatis.binding.BindingException: Invalid bound statement (not found): com.ideashin.oa.dao.DepartmentDao.selectAll 发现问题其实挺弱智的，因为mapper文件和DAO类遇到保持一致，所以我在resources资源文件中命名的时候采用的包的命名方式，这样他还是一个文件夹 应该采用的分隔符是/，而不是.]]></content>
