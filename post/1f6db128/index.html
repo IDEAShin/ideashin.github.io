@@ -104,13 +104,13 @@
 <meta property="og:site_name" content="IDEAShin">
 <meta property="og:description" content="问题在写jsp页面的时候，利用maven引入了jstl标签，却一直不能用。打开之后的页面是这样的。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://www.ideashin.com/post/1f6db128/1560252978624.png">
-<meta property="og:image" content="http://www.ideashin.com/post/1f6db128/1560254442616.png">
-<meta property="og:updated_time" content="2019-06-11T13:05:33.869Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/IDEAShin/blog-image-host/master/img/1560252978624.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IDEAShin/blog-image-host/master/img/1560254442616.png">
+<meta property="og:updated_time" content="2020-02-25T12:20:02.866Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jstl无法正常使用的原因及解决">
 <meta name="twitter:description" content="问题在写jsp页面的时候，利用maven引入了jstl标签，却一直不能用。打开之后的页面是这样的。">
-<meta name="twitter:image" content="http://www.ideashin.com/post/1f6db128/1560252978624.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/IDEAShin/blog-image-host/master/img/1560252978624.png">
 
 
 
@@ -268,7 +268,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">15</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">13</span></a>
 
   </li>
         
@@ -287,7 +287,7 @@
       
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">7</span></a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">10</span></a>
 
   </li>
         
@@ -456,12 +456,24 @@
                 
               
 
-              <time title="创建时间：2019-06-11 19:28:35 / 修改时间：21:05:33" itemprop="dateCreated datePublished" datetime="2019-06-11T19:28:35+08:00">2019-06-11</time>
+              <time title="创建时间：2019-06-11 19:28:35" itemprop="dateCreated datePublished" datetime="2019-06-11T19:28:35+08:00">2019-06-11</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-02-25 20:20:02" itemprop="dateModified" datetime="2020-02-25T20:20:02+08:00">2020-02-25</time>
               
             
           </span>
@@ -541,7 +553,7 @@
 
       
         <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>在写jsp页面的时候，利用maven引入了jstl标签，却一直不能用。打开之后的页面是这样的。<a id="more"></a></p>
-<p><img src="/post/1f6db128/1560252978624.png" alt="1560252978624"></p>
+<p><img src="https://raw.githubusercontent.com/IDEAShin/blog-image-host/master/img/1560252978624.png" alt></p>
 <p>百思不得其解，以前没遇到这样的问题啊。</p>
 <p>检查了后台代码发现并没有错误，servlet加了log也能正常输出。</p>
 <h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>在jsp中添加以下语句即可</p>
@@ -550,7 +562,7 @@
 <p><code>＜%@ page isELIgnored＝&quot;true|false&quot;%＞</code></p>
 <p>如果设定为真，那么JSP中的表达式被当成字符串处理。Web容器默认isELIgnored＝”false”。</p>
 <p>加入后正常显示</p>
-<p><img src="/post/1f6db128/1560254442616.png" alt="1560254442616"></p>
+<p><img src="https://raw.githubusercontent.com/IDEAShin/blog-image-host/master/img/1560254442616.png" alt></p>
 
       
     </div>
@@ -732,7 +744,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -775,11 +793,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -881,7 +895,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

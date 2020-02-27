@@ -96,23 +96,23 @@
 
 
 
-  <meta name="description" content="概述本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collection，Map提供的是key到value的映射 集合：故名思意，就是一堆东西放在一起。在Java里将任意数量的具有共同属性的对象存放在一个集合工具类。">
+  <meta name="description" content="概述本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collection，Map提供的是key到value的映射 集合：故名思意，就是一堆东西放在一起。在Java里将任意数量的具有共同属性的对象存放在一个集合工具类。  注意集合只能存放对象，存">
 <meta name="keywords" content="Java,集合">
 <meta property="og:type" content="article">
 <meta property="og:title" content="集合体系结构以及常用方法总结">
 <meta property="og:url" content="http://www.ideashin.com/post/e3f9bd95/index.html">
 <meta property="og:site_name" content="IDEAShin">
-<meta property="og:description" content="概述本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collection，Map提供的是key到value的映射 集合：故名思意，就是一堆东西放在一起。在Java里将任意数量的具有共同属性的对象存放在一个集合工具类。">
+<meta property="og:description" content="概述本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collection，Map提供的是key到value的映射 集合：故名思意，就是一堆东西放在一起。在Java里将任意数量的具有共同属性的对象存放在一个集合工具类。  注意集合只能存放对象，存">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://www.ideashin.com/post/e3f9bd95/1554989428619.png">
-<meta property="og:image" content="http://www.ideashin.com/post/e3f9bd95/1554988772207.png">
-<meta property="og:image" content="http://www.ideashin.com/post/e3f9bd95/1554988606489.png">
-<meta property="og:image" content="http://www.ideashin.com/post/e3f9bd95/1554989460626.png">
-<meta property="og:updated_time" content="2019-06-06T16:37:32.347Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/IDEAShin/blog-image-host/master/img/1554989428619.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IDEAShin/blog-image-host/master/img/1554988772207.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IDEAShin/blog-image-host/master/img/1554988606489.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/IDEAShin/blog-image-host/master/img/1554989460626.png">
+<meta property="og:updated_time" content="2020-02-25T12:17:07.492Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集合体系结构以及常用方法总结">
-<meta name="twitter:description" content="概述本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collection，Map提供的是key到value的映射 集合：故名思意，就是一堆东西放在一起。在Java里将任意数量的具有共同属性的对象存放在一个集合工具类。">
-<meta name="twitter:image" content="http://www.ideashin.com/post/e3f9bd95/1554989428619.png">
+<meta name="twitter:description" content="概述本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collection，Map提供的是key到value的映射 集合：故名思意，就是一堆东西放在一起。在Java里将任意数量的具有共同属性的对象存放在一个集合工具类。  注意集合只能存放对象，存">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/IDEAShin/blog-image-host/master/img/1554989428619.png">
 
 
 
@@ -270,7 +270,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">15</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">13</span></a>
 
   </li>
         
@@ -289,7 +289,7 @@
       
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">7</span></a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">10</span></a>
 
   </li>
         
@@ -475,7 +475,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-07 00:37:32" itemprop="dateModified" datetime="2019-06-07T00:37:32+08:00">2019-06-07</time>
+                <time title="修改时间：2020-02-25 20:17:07" itemprop="dateModified" datetime="2020-02-25T20:17:07+08:00">2020-02-25</time>
               
             
           </span>
@@ -555,25 +555,26 @@
 
       
         <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>本文主要是写集合的体系结构，简单说一下所有的集合类都是继承自Collection接口，这里主要介绍List、Set这两个接口，Queen并不是那么了解只是简单介绍。还有Map集合，并没有像其他接口一样继承Collection，Map提供的是<strong>key到value的映射</strong></p>
-<p><strong>集合</strong>：故名思意，就是一堆东西放在一起。在Java里将任意数量的<strong>具有共同属性的对象</strong>存放在一个集合工具类。<a id="more"></a></p>
+<p><strong>集合</strong>：故名思意，就是一堆东西放在一起。在Java里将任意数量的<strong>具有共同属性的对象</strong>存放在一个集合工具类。</p>
 <ul>
 <li>注意集合只能存放对象，存储int类型的数据“1”，也会自动转换为Integer类</li>
 <li>Map集合是以<strong>键值对</strong>的形式存在</li>
 <li>集合比数组更加灵活，它的数据存储没有限制，对数据的增删十分方便，试用于无法预测存储数据的数量</li>
 </ul>
-<h1 id="体系结构"><a href="#体系结构" class="headerlink" title="体系结构"></a>体系结构</h1><h2 id="Collection接口"><a href="#Collection接口" class="headerlink" title="Collection接口"></a>Collection接口</h2><p><img src="/post/e3f9bd95/1554989428619.png" alt="Colection接口"></p>
+<a id="more"></a>
+<h1 id="体系结构"><a href="#体系结构" class="headerlink" title="体系结构"></a>体系结构</h1><h2 id="Collection接口"><a href="#Collection接口" class="headerlink" title="Collection接口"></a>Collection接口</h2><p><img src="https://raw.githubusercontent.com/IDEAShin/blog-image-host/master/img/1554989428619.png" alt></p>
 <h3 id="Iterable与Iterator的关系"><a href="#Iterable与Iterator的关系" class="headerlink" title="Iterable与Iterator的关系"></a>Iterable与Iterator的关系</h3><p>说到体系结构，大家能看到，Collection是继承中Iterable而来的，那么这又和Iterator有什么关系呢？</p>
 <ul>
 <li><p><strong>Iterable属于java.lang包，Ierrator以及Collection属于java.util包</strong></p>
 </li>
 <li><p>Iterator也就是迭代器接口，它里面提供了迭代器的方法</p>
-<p><img src="/post/e3f9bd95/1554988772207.png" alt="1554988772207"></p>
+<p><img src="https://raw.githubusercontent.com/IDEAShin/blog-image-host/master/img/1554988772207.png" alt></p>
 </li>
 <li><p><strong>在Iterable接口中，调用了Iterator类型的的iterator()方法，返回一个T类型的迭代器</strong></p>
-<p><img src="/post/e3f9bd95/1554988606489.png" alt="1554988606489"></p>
+<p><img src="https://raw.githubusercontent.com/IDEAShin/blog-image-host/master/img/1554988606489.png" alt="Iterator&lt;T&gt;"></p>
 </li>
 </ul>
-<h2 id="Map接口"><a href="#Map接口" class="headerlink" title="Map接口"></a>Map接口</h2><p><img src="/post/e3f9bd95/1554989460626.png" alt="Map接口"></p>
+<h2 id="Map接口"><a href="#Map接口" class="headerlink" title="Map接口"></a>Map接口</h2><p><img src="https://raw.githubusercontent.com/IDEAShin/blog-image-host/master/img/1554989460626.png" alt="Map接口"></p>
 <h1 id="List"><a href="#List" class="headerlink" title="List"></a>List</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
 <li><p>List（序列）就是一个元素<strong>有序且可重复</strong>的集合</p>
 </li>
@@ -764,7 +765,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -807,11 +814,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -913,7 +916,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

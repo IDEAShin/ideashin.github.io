@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="前言​    最近在做一个考勤管理的项目，项目中涉及到了大量的查询语句。如姓名模糊查询、日期查询、时间间隔、部门查询、考勤结果等等，这些查询可以不进行选择（即为此选项不进行条件查询）。 ​    以前写过练习语句，这种情况如果是字符串还好说，只需要和“%”拼接进行模糊查询就可以。">
-<meta name="keywords" content="SQL">
+  <meta name="description" content="前言​    最近在做一个考勤管理的项目，项目中涉及到了大量的查询语句。如姓名模糊查询、日期查询、时间间隔、部门查询、考勤结果等等，这些查询可以不进行选择（即为此选项不进行条件查询）。 ​    以前写过练习语句，这种情况如果是字符串还好说，只需要和“%”拼接进行模糊查询就可以。然而日期为DATA类型，部门编号为INT类型，这种情况就不能使用模糊查询。 问题首先选择的方法是进行SQL语句的拼接：">
+<meta name="keywords" content="Java,SQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="非String类型(INT、DATE等)不确定为NULL或空的情况下如何编写SQL查询语句">
 <meta property="og:url" content="http://www.ideashin.com/post/a053a60f/index.html">
 <meta property="og:site_name" content="IDEAShin">
-<meta property="og:description" content="前言​    最近在做一个考勤管理的项目，项目中涉及到了大量的查询语句。如姓名模糊查询、日期查询、时间间隔、部门查询、考勤结果等等，这些查询可以不进行选择（即为此选项不进行条件查询）。 ​    以前写过练习语句，这种情况如果是字符串还好说，只需要和“%”拼接进行模糊查询就可以。">
+<meta property="og:description" content="前言​    最近在做一个考勤管理的项目，项目中涉及到了大量的查询语句。如姓名模糊查询、日期查询、时间间隔、部门查询、考勤结果等等，这些查询可以不进行选择（即为此选项不进行条件查询）。 ​    以前写过练习语句，这种情况如果是字符串还好说，只需要和“%”拼接进行模糊查询就可以。然而日期为DATA类型，部门编号为INT类型，这种情况就不能使用模糊查询。 问题首先选择的方法是进行SQL语句的拼接：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-07T09:27:03.530Z">
+<meta property="og:updated_time" content="2020-02-25T14:05:18.493Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="非String类型(INT、DATE等)不确定为NULL或空的情况下如何编写SQL查询语句">
-<meta name="twitter:description" content="前言​    最近在做一个考勤管理的项目，项目中涉及到了大量的查询语句。如姓名模糊查询、日期查询、时间间隔、部门查询、考勤结果等等，这些查询可以不进行选择（即为此选项不进行条件查询）。 ​    以前写过练习语句，这种情况如果是字符串还好说，只需要和“%”拼接进行模糊查询就可以。">
+<meta name="twitter:description" content="前言​    最近在做一个考勤管理的项目，项目中涉及到了大量的查询语句。如姓名模糊查询、日期查询、时间间隔、部门查询、考勤结果等等，这些查询可以不进行选择（即为此选项不进行条件查询）。 ​    以前写过练习语句，这种情况如果是字符串还好说，只需要和“%”拼接进行模糊查询就可以。然而日期为DATA类型，部门编号为INT类型，这种情况就不能使用模糊查询。 问题首先选择的方法是进行SQL语句的拼接：">
 
 
 
@@ -265,7 +265,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">15</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">13</span></a>
 
   </li>
         
@@ -284,7 +284,7 @@
       
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">7</span></a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">10</span></a>
 
   </li>
         
@@ -470,7 +470,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-07 17:27:03" itemprop="dateModified" datetime="2019-08-07T17:27:03+08:00">2019-08-07</time>
+                <time title="修改时间：2020-02-25 22:05:18" itemprop="dateModified" datetime="2020-02-25T22:05:18+08:00">2020-02-25</time>
               
             
           </span>
@@ -550,8 +550,8 @@
 
       
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    最近在做一个考勤管理的项目，项目中涉及到了大量的查询语句。如姓名模糊查询、日期查询、时间间隔、部门查询、考勤结果等等，这些查询可以不进行选择（即为此选项不进行条件查询）。</p>
-<p>​    以前写过练习语句，这种情况如果是字符串还好说，只需要和“%”拼接进行模糊查询就可以。<a id="more"></a>然而日期为DATA类型，部门编号为INT类型，这种情况就不能使用模糊查询。</p>
-<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>首先选择的方法是进行SQL语句的拼接：</p>
+<p>​    以前写过练习语句，这种情况如果是字符串还好说，只需要和“%”拼接进行模糊查询就可以。然而日期为DATA类型，部门编号为INT类型，这种情况就不能使用模糊查询。</p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>首先选择的方法是进行SQL语句的拼接：<a id="more"></a></p>
 <ul>
 <li>首先判断是否为空或者NULL</li>
 <li>根据条件调用对应SQL语句</li>
@@ -608,6 +608,8 @@
     <footer class="post-footer">
       
         <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
             <a href="/tags/SQL/" rel="tag"># SQL</a>
           
@@ -743,7 +745,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -786,11 +794,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -892,7 +896,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
